@@ -9,7 +9,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Booking::class, function (Faker $faker) {
     return [
-        'customer_id' => Customer::pluck('customer_id')->random(),
+        'customer_id' => Customer::pluck('id')->random(),
         'service_type' => rand(1,3),
         'service_date' => Carbon::now(),
         'service_time' => '1:00PM - 2:00PM',
@@ -20,6 +20,7 @@ $factory->define(Booking::class, function (Faker $faker) {
         'note' => $faker->paragraph(rand(3,7), true),
         'bedroom' => rand(1,5),
         'bathroom' => rand(1,5),
+        'status' => rand(0,3),
         'created_at' => Carbon::now(),
         'updated_at' => Carbon::now()
     ];

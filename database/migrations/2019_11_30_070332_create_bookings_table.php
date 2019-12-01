@@ -14,7 +14,7 @@ class CreateBookingsTable extends Migration
     public function up()
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->bigIncrements('booking_id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('customer_id');
             $table->smallInteger('service_type')->default(1);
             $table->dateTime('service_date');
@@ -27,6 +27,7 @@ class CreateBookingsTable extends Migration
             $table->smallInteger('bedroom');
             $table->smallInteger('bathroom');
             $table->double('booking_total', 2)->default(0);
+            $table->tinyInteger('status')->default(0)->comment('0-process|1-Com|2-Can|3-fraud');
             $table->timestamps();
         });
     }

@@ -19,3 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/booking', 'BookingsController@index')->name('booking.index');
+Route::get('/booking/render', 'BookingsController@renderBooking')->name('booking.render');

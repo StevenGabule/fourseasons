@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\DataTables;
 
 class BookingsController extends Controller
 {
@@ -15,6 +17,21 @@ class BookingsController extends Controller
     public function index()
     {
         return view('booking.index');
+    }
+
+    public function renderBooking()
+    {
+        if (request()->ajax()) {
+            return DataTables::of(DB::table('customer_bookings_p')->get())
+                ->addColumn('action', function ($data) {
+                    $button = '<button type="button" name="edit" id="' . $data->booking_id . '" class="btn btn-primary btn-sm"><i class="far fa-fw fa-eye"></i></button>';
+                    $button .= '<button type="button" name="edit" id="' . $data->booking_id . '" class="btn btn-danger btn-sm"><i class="fas fa-fw fa-trash"></i></button>';
+                    return $button;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+//        return view('bookingData');
     }
 
     /**
@@ -30,7 +47,7 @@ class BookingsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +58,7 @@ class BookingsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Booking  $bookings
+     * @param \App\Booking $bookings
      * @return \Illuminate\Http\Response
      */
     public function show(Booking $bookings)
@@ -52,7 +69,7 @@ class BookingsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Booking  $bookings
+     * @param \App\Booking $bookings
      * @return \Illuminate\Http\Response
      */
     public function edit(Booking $bookings)
@@ -63,8 +80,8 @@ class BookingsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Booking  $bookings
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Booking $bookings
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Booking $bookings)
@@ -75,7 +92,7 @@ class BookingsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Booking  $bookings
+     * @param \App\Booking $bookings
      * @return \Illuminate\Http\Response
      */
     public function destroy(Booking $bookings)

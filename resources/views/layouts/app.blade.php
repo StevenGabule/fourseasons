@@ -23,6 +23,8 @@
     <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
 
     <title>FourSeasons - Dashboard</title>
+
+    @stack('css_booking_page')
 </head>
 <body id="page-top">
 <div id="app">
@@ -99,7 +101,8 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -137,6 +140,6 @@
 <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
 <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
 <!-- Scripts -->
-
+@stack('scripts')
 </body>
 </html>
