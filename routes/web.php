@@ -19,4 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/booking', 'BookingsController@index')->name('booking.index');
-Route::get('/booking/render', 'BookingsController@renderBooking')->name('booking.render');
+Route::get('/booking/progress', 'BookingsController@renderBooking')->name('booking.render');
+Route::get('/booking/completed', 'BookingsController@renderBookingCompleted')->name('booking.render.completed');
+Route::get('/booking/cancelled', 'BookingsController@renderBookingCancelled')->name('booking.render.cancelled');
+Route::get('/booking/fraud', 'BookingsController@renderBookingFraud')->name('booking.render.fraud');
+Route::get('/booking/{booking_id}', 'BookingsController@show')->name('booking.render.by');
+
+
+Route::get('/customers', 'CustomersController@index')->name('customers.index');
+Route::get('/customers/all', 'CustomersController@GetCustomers')->name('customers.all');
+

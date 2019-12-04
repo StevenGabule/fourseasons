@@ -19,7 +19,9 @@ class CreateBookingsTable extends Migration
             $table->smallInteger('service_type')->default(1);
             $table->dateTime('service_date');
             $table->string('service_time');
-            $table->smallInteger('frequency')->default(1)->comment('');
+            $table->tinyInteger('sms_notification')->default(0);
+            $table->tinyInteger('payment_type')->default(0);
+            $table->smallInteger('frequency')->default(1);
             $table->string('duration', 50);
             $table->string('floors', 50)->default(0);
             $table->smallInteger('require_')->default(0)->comment('0 for not | 1 for yes');

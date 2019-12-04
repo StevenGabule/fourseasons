@@ -2,10 +2,9 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomersBookingsView extends Migration
+class CreateBookingCustomerViewTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +14,7 @@ class CreateCustomersBookingsView extends Migration
     public function up()
     {
         DB::statement("
-            CREATE OR REPLACE VIEW customer_bookings_p
+            CREATE OR REPLACE VIEW customer_bookings_c
             AS
             SELECT 
                 bookings.id AS booking_id,
@@ -33,7 +32,7 @@ class CreateCustomersBookingsView extends Migration
                 FROM bookings 
                 INNER JOIN customers ON
                 bookings.customer_id = customers.id
-                WHERE bookings.`status` = 0 
+                WHERE bookings.`status` = 1 
                 ORDER BY bookings.`status` DESC;
       ");
     }

@@ -14,6 +14,8 @@ $factory->define(Booking::class, function (Faker $faker) {
         'service_date' => Carbon::now(),
         'service_time' => '1:00PM - 2:00PM',
         'frequency' => rand(1,4),
+        'sms_notification' => rand(0,1),
+        'payment_type' => rand(0,1),
         'duration' => rand(2,5) . ' hours',
         'floors' => rand(1,2),
         'require_' => rand(0,1),
@@ -21,6 +23,7 @@ $factory->define(Booking::class, function (Faker $faker) {
         'bedroom' => rand(1,5),
         'bathroom' => rand(1,5),
         'status' => rand(0,3),
+        'booking_total' => rand(50, 300),
         'created_at' => Carbon::now(),
         'updated_at' => Carbon::now()
     ];
