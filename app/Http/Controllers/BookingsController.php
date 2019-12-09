@@ -25,8 +25,18 @@ class BookingsController extends Controller
         if (request()->ajax()) {
             return DataTables::of(DB::table('customer_bookings_p')->get())
                 ->addColumn('action', function ($data) {
-                    $button = '<a name="edit" href="/booking/' . $data->booking_id . '" id="' . $data->booking_id . '" class="btn btn-primary btn-sm"><i class="far fa-fw fa-eye"></i></a> ';
-                    $button .= '<button type="button" name="edit" id="' . $data->booking_id . '" class="btn btn-danger btn-sm"><i class="fas fa-fw fa-trash"></i></button>';
+                   $button = '<div class="dropdown">
+                                  <a class="btn btn-light font-weight-bold shadow" style="font-size: 20px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ...
+                                  </a>
+
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                  </div>
+                                </div>';
                     return $button;
                 })
                 ->rawColumns(['action'])
@@ -40,8 +50,18 @@ class BookingsController extends Controller
         if (request()->ajax()) {
             return DataTables::of(DB::table('customer_bookings_c')->get())
                 ->addColumn('action', function ($data) {
-                    $button = '<a name="edit" href="/booking/render/' . $data->booking_id . '" id="' . $data->booking_id . '" class="btn btn-primary btn-sm"><i class="far fa-fw fa-eye"></i></a> ';
-                    $button .= '<button type="button" name="edit" id="' . $data->booking_id . '" class="btn btn-danger btn-sm"><i class="fas fa-fw fa-trash"></i></button>';
+                     $button = '<div class="dropdown">
+                                  <a class="btn btn-light font-weight-bold shadow" style="font-size: 20px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ...
+                                  </a>
+
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                  </div>
+                                </div>';
                     return $button;
                 })
                 ->rawColumns(['action'])
@@ -54,8 +74,18 @@ class BookingsController extends Controller
         if (request()->ajax()) {
             return DataTables::of(DB::table('customer_bookings_cancelled')->get())
                 ->addColumn('action', function ($data) {
-                    $button = '<a name="edit" href="/booking/render/' . $data->booking_id . '" id="' . $data->booking_id . '" class="btn btn-primary btn-sm"><i class="far fa-fw fa-eye"></i></a> ';
-                    $button .= '<button type="button" name="edit" id="' . $data->booking_id . '" class="btn btn-danger btn-sm"><i class="fas fa-fw fa-trash"></i></button>';
+                     $button = '<div class="dropdown">
+                                  <a class="btn btn-light font-weight-bold shadow" style="font-size: 20px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ...
+                                  </a>
+
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                  </div>
+                                </div>';
                     return $button;
                 })
                 ->rawColumns(['action'])
@@ -68,8 +98,18 @@ class BookingsController extends Controller
         if (request()->ajax()) {
             return DataTables::of(DB::table('customer_bookings_fraud')->get())
                 ->addColumn('action', function ($data) {
-                    $button = '<a name="edit" href="/booking/render/' . $data->booking_id . '" id="' . $data->booking_id . '" class="btn btn-primary btn-sm"><i class="far fa-fw fa-eye"></i></a> ';
-                    $button .= '<button type="button" name="edit" id="' . $data->booking_id . '" class="btn btn-danger btn-sm"><i class="fas fa-fw fa-trash"></i></button>';
+                     $button = '<div class="dropdown">
+                                  <a class="btn btn-light font-weight-bold shadow" style="font-size: 20px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ...
+                                  </a>
+
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                  </div>
+                                </div>';
                     return $button;
                 })
                 ->rawColumns(['action'])

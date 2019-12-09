@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/booking', 'BookingsController@index')->name('booking.index');
 Route::get('/booking/progress', 'BookingsController@renderBooking')->name('booking.render');
 Route::get('/booking/completed', 'BookingsController@renderBookingCompleted')->name('booking.render.completed');
@@ -28,4 +29,7 @@ Route::get('/booking/{booking_id}', 'BookingsController@show')->name('booking.re
 
 Route::get('/customers', 'CustomersController@index')->name('customers.index');
 Route::get('/customers/all', 'CustomersController@GetCustomers')->name('customers.all');
+
+Route::get('/calendars', 'CalendarEvent@index')->name('calendar.index');
+
 

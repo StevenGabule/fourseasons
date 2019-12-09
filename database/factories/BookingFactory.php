@@ -11,7 +11,8 @@ $factory->define(Booking::class, function (Faker $faker) {
     return [
         'customer_id' => Customer::pluck('id')->random(),
         'service_type' => rand(1,3),
-        'service_date' => Carbon::now(),
+        'service_date_start' => $faker->date($format = 'Y/m/d', $max = 'now'),
+        'service_date_end' => $faker->date($format = 'Y/m/d', $max = 'now'),
         'service_time' => '1:00PM - 2:00PM',
         'frequency' => rand(1,4),
         'sms_notification' => rand(0,1),

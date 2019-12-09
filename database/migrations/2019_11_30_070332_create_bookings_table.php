@@ -17,7 +17,8 @@ class CreateBookingsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('customer_id');
             $table->smallInteger('service_type')->default(1);
-            $table->dateTime('service_date');
+            $table->dateTime('service_date_start');
+            $table->dateTime('service_date_end');
             $table->string('service_time');
             $table->tinyInteger('sms_notification')->default(0);
             $table->tinyInteger('payment_type')->default(0);

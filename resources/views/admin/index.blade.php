@@ -588,11 +588,3 @@
         </div><!-- end of class content wrapper -->
     </div><!-- end of id content wrapper -->
 @endsection
-
-@push('scripts')
-    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
-    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
-    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
-   <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
-@endpush

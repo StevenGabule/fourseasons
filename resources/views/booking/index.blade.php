@@ -1,8 +1,39 @@
 @extends('layouts.app')
 @push('css_booking_page')
     <style>
-        td {
-            vertical-align: middle !important;
+        td { vertical-align: middle !important; }
+        table.dataTable.table-sm > thead > tr > th { color: #74788d !important;}
+        table.dataTable { border-collapse: collapse !important;}
+        .default-table-size { font-size: 14px !important;}
+        .frequency {display:block;width: 100px;margin: 0 auto;text-align: center; color: white; font-size: 13px;border-radius: 25px}
+        .monthly { background: #fd27eb;}
+        .weekly { background: #1dc9b7;}
+        .biweekly { background: #ffb822;}
+        .onetime { background: #22b9ff;}
+        .dataTables_length {
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+        div.dataTables_wrapper div.dataTables_filter label {
+            margin-right: 2%;
+            margin-top: 2%;
+        }
+
+        table.dataTable.table-sm > thead > tr > th:nth-child(1),
+        table.dataTable td:nth-child(1){
+            padding-left: 15px;
+        }
+
+        div.dataTables_wrapper div.dataTables_info {
+            margin-left: 2%;
+            padding-bottom: 2%;
+        }
+        div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+            margin-right: 2%;
+        }
+        tr.odd,
+        tr.even {
+            color: #595d6e;
         }
     </style>
 @endpush
@@ -24,13 +55,13 @@
                         <i class="fas fa-table"></i>
                         Booking Data Table
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-sm table-bordered" id="dataTableBooking" width="100%"
+                            <table class="table table-sm default-table-size" id="dataTableBooking" width="100%"
                                    cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Date</th>
+                                    <th width="20%">Date</th>
                                     <th>Type</th>
                                     <th>Customer</th>
                                     <th>Location</th>
@@ -45,15 +76,14 @@
                 </div><!-- end of card -->
 
                 <!-- DataTables for completed booking information-->
-
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
                          Completed Booking Data Table
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-sm table-bordered" id="dataTableBookingCompleted" width="100%"
+                            <table class="table table-sm default-table-size" id="dataTableBookingCompleted" width="100%"
                                    cellspacing="0">
                                 <thead>
                                 <tr>
@@ -62,6 +92,7 @@
                                     <th>Customer</th>
                                     <th>Location</th>
                                     <th>Frequency</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
 
@@ -75,9 +106,9 @@
                         <i class="fas fa-table"></i>
                         Cancelled Booking Data Table
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-sm table-bordered" id="dataTableBookingCancelled" width="100%"
+                            <table class="table table-sm default-table-size" id="dataTableBookingCancelled" width="100%"
                                    cellspacing="0">
                                 <thead>
                                 <tr>
@@ -86,6 +117,7 @@
                                     <th>Customer</th>
                                     <th>Location</th>
                                     <th>Frequency</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
 
@@ -100,9 +132,9 @@
                         <i class="fas fa-table"></i>
                         Fraud Booking Data Table
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-sm table-bordered" id="dataTableBookingFraud" width="100%"
+                            <table class="table table-sm default-table-size" id="dataTableBookingFraud" width="100%"
                                    cellspacing="0">
                                 <thead>
                                 <tr>
@@ -111,6 +143,7 @@
                                     <th>Customer</th>
                                     <th>Location</th>
                                     <th>Frequency</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
 
@@ -127,11 +160,16 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
     <script>
         $(document).ready(function () {
+
             $('#dataTableBooking').DataTable({
                 processing: true,
                 serverSide: true,
+                ordering: false,
                 ajax: "{{ route('booking.render') }}",
                 columnDefs: [
                     {
@@ -141,10 +179,12 @@
                 ],
                 columns: [
                     {
-                        data: 'service_date',
-                        name: 'service_date',
+                        data: {
+                            service_date_start: 'service_date_start',
+                            service_time: 'service_time',
+                        },
                         render: function (data) {
-                            return formatDate(data);
+                            return formatDate(data['service_date_start'], data['service_time']);
                         }
                     },
                     {
@@ -168,7 +208,7 @@
                         data: 'location',
                         name: 'location',
                         render: function (data) {
-                            return data.substr(0, 70) + '...';
+                            return data.substr(0, 60) + '...';
                         }
                     },
                     {
@@ -176,13 +216,13 @@
                         name: 'frequency',
                         render: function (data) {
                             if (parseInt(data) === 1) {
-                                return "One time";
+                                return "<span class='frequency onetime'>One time</span>";
                             } else if (parseInt(data) === 2) {
-                                return "Weekly";
+                                return "<span class='frequency weekly'>Weekly</span>";
                             } else if (parseInt(data) === 3) {
-                                return "Biweekly";
+                                return "<span class='frequency biweekly'>Biweekly</span>";
                             } else {
-                                return "Monthly";
+                                return "<span class='frequency monthly'>Monthly</span>";
                             }
                         },
                         orderable: false
@@ -194,10 +234,10 @@
                     }
                 ]
             });
-
             $('#dataTableBookingCompleted').DataTable({
                 processing: true,
                 serverSide: true,
+                ordering: false,
                 ajax: "{{ route('booking.render.completed') }}",
                 columnDefs: [
                     {
@@ -207,10 +247,12 @@
                 ],
                 columns: [
                     {
-                        data: 'service_date',
-                        name: 'service_date',
+                        data: {
+                            service_date_start: 'service_date_start',
+                            service_time: 'service_time',
+                        },
                         render: function (data) {
-                            return formatDate(data);
+                            return formatDate(data['service_date_start'], data['service_time']);
                         }
                     },
                     {
@@ -242,23 +284,28 @@
                         name: 'frequency',
                         render: function (data) {
                             if (parseInt(data) === 1) {
-                                return "One time";
+                                return "<span class='frequency onetime'>One time</span>";
                             } else if (parseInt(data) === 2) {
-                                return "Weekly";
+                                return "<span class='frequency weekly'>Weekly</span>";
                             } else if (parseInt(data) === 3) {
-                                return "Biweekly";
+                                return "<span class='frequency biweekly'>Biweekly</span>";
                             } else {
-                                return "Monthly";
+                                return "<span class='frequency monthly'>Monthly</span>";
                             }
                         },
+                        orderable: false
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
                         orderable: false
                     }
                 ]
             });
-
             $('#dataTableBookingCancelled').DataTable({
                 processing: true,
                 serverSide: true,
+                ordering: false,
                 ajax: "{{ route('booking.render.cancelled') }}",
                 columnDefs: [
                     {
@@ -268,10 +315,12 @@
                 ],
                 columns: [
                     {
-                        data: 'service_date',
-                        name: 'service_date',
+                        data: {
+                            service_date_start: 'service_date_start',
+                            service_time: 'service_time',
+                        },
                         render: function (data) {
-                            return formatDate(data);
+                            return formatDate(data['service_date_start'], data['service_time']);
                         }
                     },
                     {
@@ -303,15 +352,20 @@
                         name: 'frequency',
                         render: function (data) {
                             if (parseInt(data) === 1) {
-                                return "One time";
+                                return "<span class='frequency onetime'>One time</span>";
                             } else if (parseInt(data) === 2) {
-                                return "Weekly";
+                                return "<span class='frequency weekly'>Weekly</span>";
                             } else if (parseInt(data) === 3) {
-                                return "Biweekly";
+                                return "<span class='frequency biweekly'>Biweekly</span>";
                             } else {
-                                return "Monthly";
+                                return "<span class='frequency monthly'>Monthly</span>";
                             }
                         },
+                        orderable: false
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
                         orderable: false
                     }
                 ]
@@ -319,6 +373,7 @@
             $('#dataTableBookingFraud').DataTable({
                 processing: true,
                 serverSide: true,
+                ordering: false,
                 ajax: "{{ route('booking.render.fraud') }}",
                 columnDefs: [
                     {
@@ -328,10 +383,12 @@
                 ],
                 columns: [
                     {
-                        data: 'service_date',
-                        name: 'service_date',
+                        data: {
+                            service_date_start: 'service_date_start',
+                            service_time: 'service_time',
+                        },
                         render: function (data) {
-                            return formatDate(data);
+                            return formatDate(data['service_date_start'], data['service_time']);
                         }
                     },
                     {
@@ -363,25 +420,29 @@
                         name: 'frequency',
                         render: function (data) {
                             if (parseInt(data) === 1) {
-                                return "One time";
+                                return "<span class='frequency onetime'>One time</span>";
                             } else if (parseInt(data) === 2) {
-                                return "Weekly";
+                                return "<span class='frequency weekly'>Weekly</span>";
                             } else if (parseInt(data) === 3) {
-                                return "Biweekly";
+                                return "<span class='frequency biweekly'>Biweekly</span>";
                             } else {
-                                return "Monthly";
+                                return "<span class='frequency monthly'>Monthly</span>";
                             }
                         },
+                        orderable: false
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
                         orderable: false
                     }
                 ]
             });
-
-            function formatDate(_date) {
-                var d = new Date(_date);
-                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-                return months[d.getMonth()].substring(0, 3) + '. ' + d.getDate() + ' / ' + days[d.getDay()];
+            function formatDate(_date, _time="") {
+                let d = new Date(_date);
+                let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                return '<span class="font-weight-bold">' + months[d.getMonth()].substring(0, 3) + ' ' + d.getDate() + '</span> / ' + _time + ' / <span class="font-weight-bold">' + days[d.getDay()] + '</span>';
             }
         })
     </script>

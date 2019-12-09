@@ -19,7 +19,8 @@ class CreateBookingCancelledFraudcustomerViewTable extends Migration
             SELECT 
                 bookings.id AS booking_id,
                 bookings.customer_id,
-                bookings.service_date,
+                bookings.service_date_start,
+                bookings.service_date_end,
                 bookings.service_time,
                 bookings.service_type,
                 bookings.frequency,
@@ -42,7 +43,8 @@ class CreateBookingCancelledFraudcustomerViewTable extends Migration
             SELECT 
                 bookings.id AS booking_id,
                 bookings.customer_id,
-                bookings.service_date,
+                bookings.service_date_start,
+                bookings.service_date_end,
                 bookings.service_time,
                 bookings.service_type,
                 bookings.frequency,

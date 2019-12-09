@@ -14,7 +14,7 @@
 
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('booking.index') }}">Bookings</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('booking.index') }}">Customers</a></li>
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
 
@@ -22,7 +22,7 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
-                        Booking Data Table
+                        Customers Data Table
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -49,6 +49,8 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
     <script>
         $(document).ready(function () {
             $('#dataTableCustomer').DataTable({
