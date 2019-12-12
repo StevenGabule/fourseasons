@@ -1,11 +1,13 @@
 @extends('layouts.app')
+
 @push('css_booking_page')
+
     <style>
         td { vertical-align: middle !important; }
         table.dataTable.table-sm > thead > tr > th { color: #74788d !important;}
         table.dataTable { border-collapse: collapse !important;}
-        .default-table-size { font-size: 14px !important;}
-        .frequency {display:block;width: 100px;margin: 0 auto;text-align: center; color: white; font-size: 13px;border-radius: 25px}
+        .default-table-size { font-size: 12px !important;}
+        .frequency {display:block;width: 100px;text-align: center; color: white; font-size: 13px;border-radius: 25px}
         .monthly { background: #fd27eb;}
         .weekly { background: #1dc9b7;}
         .biweekly { background: #ffb822;}
@@ -22,20 +24,25 @@
         table.dataTable.table-sm > thead > tr > th:nth-child(1),
         table.dataTable td:nth-child(1){
             padding-left: 15px;
+
         }
 
         div.dataTables_wrapper div.dataTables_info {
             margin-left: 2%;
-            padding-bottom: 2%;
+            padding-bottom: 4%;
+            font-size: 11px;
+            font-weight: bold;
         }
         div.dataTables_wrapper div.dataTables_paginate ul.pagination {
             margin-right: 2%;
+            font-size: 11px;
         }
         tr.odd,
         tr.even {
             color: #595d6e;
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
 @endpush
 @section('content')
     <div id="wrapper">
@@ -49,8 +56,12 @@
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
 
+                <div class="text-right mb-3">
+                    <a href="/" class="btn btn-sm btn-light shadow-sm"><i class="fas fa-user-plus mr-2"></i> Add Booking</a>
+                </div>
+
                 <!-- DataTables for booking information-->
-                <div class="card mb-3">
+                <div class="card mb-3 rounded-0">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
                         Booking Data Table
@@ -69,14 +80,13 @@
                                     <th>Actions</th>
                                 </tr>
                                 </thead>
-
                             </table><!-- end of table -->
                         </div><!-- end of table responsive -->
                     </div><!-- end of card body -->
                 </div><!-- end of card -->
 
                 <!-- DataTables for completed booking information-->
-                <div class="card mb-3">
+                <div class="card mb-3 rounded-0">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
                          Completed Booking Data Table
@@ -87,7 +97,7 @@
                                    cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Date</th>
+                                    <th width="20%">Date</th>
                                     <th>Type</th>
                                     <th>Customer</th>
                                     <th>Location</th>
@@ -101,7 +111,7 @@
                     </div><!-- end of card body -->
                 </div><!-- end of card -->
                 <!-- start of card for cancelled -->
-                <div class="card mb-3">
+                <div class="card mb-3 rounded-0">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
                         Cancelled Booking Data Table
@@ -112,7 +122,7 @@
                                    cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Date</th>
+                                    <th width="20%">Date</th>
                                     <th>Type</th>
                                     <th>Customer</th>
                                     <th>Location</th>
@@ -125,9 +135,8 @@
                         </div><!-- end of table responsive -->
                     </div><!-- end of card body -->
                 </div>
-
                 <!-- start of card for cancelled -->
-                <div class="card mb-3">
+                <div class="card mb-3 rounded-0">
                     <div class="card-header">
                         <i class="fas fa-table"></i>
                         Fraud Booking Data Table
@@ -138,7 +147,7 @@
                                    cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Date</th>
+                                    <th width="20%">Date</th>
                                     <th>Type</th>
                                     <th>Customer</th>
                                     <th>Location</th>
@@ -151,19 +160,151 @@
                         </div><!-- end of table responsive -->
                     </div><!-- end of card body -->
                 </div>
-
             </div> <!-- /.container-fluid -->
             <!-- Sticky Footer -->
             @include('layouts._footer')
         </div><!-- end of class content wrapper -->
     </div><!-- end of id content wrapper -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="BookingDeletingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure to remove?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" id="deletingBooking_" class="btn btn-danger btn-sm">Delete Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
     <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
     <script>
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "2000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        $(document).on('click', '.completed_progress', function() {
+            let booking_completedID = $(this).attr('id');
+            let type = 0; // 0 process | 1 completed | 2 cancel |  3 fraud
+            $.ajax({
+                url: "booking/" + booking_completedID + "/status/" + type,
+                beforeSend: function () {
+                    toastr.error('Request processing...');
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#dataTableBookingCompleted').DataTable().ajax.reload();
+                        $('#dataTableBooking').DataTable().ajax.reload();
+                        toastr.success('Requested completed!');
+                    }, 300);
+                }
+            });
+        });
+
+        $(document).on('click', '.booking_completed', function() {
+            let booking_completedID = $(this).attr('id');
+            let type = 1; // 0 process | 1 completed | 2 cancel |  3 fraud
+            $.ajax({
+                url: "booking/" + booking_completedID + "/status/" + type,
+                beforeSend: function () {
+                    toastr.info('Request processing...');
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#dataTableBooking').DataTable().ajax.reload();
+                        $('#dataTableBookingCompleted').DataTable().ajax.reload();
+                        toastr.success('Requested completed!');
+                    }, 300);
+                }
+            });
+        });
+
+        $(document).on('click', '.booking_cancel, .completed_cancel', function() {
+            let bookingCancelID = $(this).attr('id');
+            let type = 2; // 0 process | 1 completed | 2 cancel |  3 fraud
+            $.ajax({
+                url: "booking/" + bookingCancelID + "/status/" + type,
+                beforeSend: function () {
+                    toastr.info('Request processing...');
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#dataTableBooking').DataTable().ajax.reload();
+                        $('#dataTableBookingCancelled').DataTable().ajax.reload();
+                        toastr.success('Requested completed!');
+                    }, 2000);
+                }
+            });
+        });
+
+        $(document).on('click', '.booking_fraud, .completed_fraud', function() {
+            let bookingFraudID = $(this).attr('id');
+            let type = 3; // 0 process | 1 completed | 2 cancel |  3 fraud
+            $.ajax({
+                url: "booking/" + bookingFraudID + "/status/" + type,
+                beforeSend: function () {
+                    toastr.info('Request processing...');
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#dataTableBooking').DataTable().ajax.reload();
+                        $('#dataTableBookingFraud').DataTable().ajax.reload();
+                        toastr.success('Requested completed!');
+                    }, 2000);
+                }
+            });
+        });
+        let booking_ID;
+        $(document).on('click', '.bookingDeleting', function() {
+            booking_ID = $(this).attr('id');
+            $("#deletingBooking_").text("Delete Booking");
+            $("#BookingDeletingModal").modal('show');
+        });
+
+        $(document).on('click', '#deletingBooking_', function() {
+            $.ajax({
+                url: "booking/deleting/" + booking_ID,
+                beforeSend: function () {
+                    $('#deletingBooking_').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Deleting...');
+                },
+                success: function (data) {
+                    $('#BookingDeletingModal').modal('hide');
+                    $('#dataTableBooking').DataTable().ajax.reload();
+                    $('#dataTableBookingCompleted').DataTable().ajax.reload();
+                    $('#dataTableBookingCancelled').DataTable().ajax.reload();
+                    $('#dataTableBookingFraud').DataTable().ajax.reload();
+                }
+            });
+        });
+
+
         $(document).ready(function () {
 
             $('#dataTableBooking').DataTable({
@@ -183,9 +324,7 @@
                             service_date_start: 'service_date_start',
                             service_time: 'service_time',
                         },
-                        render: function (data) {
-                            return formatDate(data['service_date_start'], data['service_time']);
-                        }
+                        render: (data) => formatDate(data['service_date_start'], data['service_time'])
                     },
                     {
                         data: 'service_type',
@@ -202,7 +341,8 @@
                     },
                     {
                         data: 'fullName',
-                        name: 'fullName'
+                        name: 'fullName',
+                        render: (data) => '<span class="font-weight-bold">' + data + '</span>'
                     },
                     {
                         data: 'location',
@@ -270,7 +410,8 @@
                     },
                     {
                         data: 'fullName',
-                        name: 'fullName'
+                        name: 'fullName',
+                        render: (data) => '<span class="font-weight-bold">' + data + '</span>'
                     },
                     {
                         data: 'location',
@@ -338,7 +479,8 @@
                     },
                     {
                         data: 'fullName',
-                        name: 'fullName'
+                        name: 'fullName',
+                        render: (data) => '<span class="font-weight-bold">' + data + '</span>'
                     },
                     {
                         data: 'location',
@@ -406,7 +548,8 @@
                     },
                     {
                         data: 'fullName',
-                        name: 'fullName'
+                        name: 'fullName',
+                        render: (data) => '<span class="font-weight-bold">' + data + '</span>'
                     },
                     {
                         data: 'location',

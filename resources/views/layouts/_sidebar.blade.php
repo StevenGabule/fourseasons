@@ -8,7 +8,7 @@
         </a>
     </li>
 
-    <li class="nav-item {{ Route::current()->getName() == 'booking.index' ? 'active' : ''}}">
+    <li class="nav-item {{ Route::current()->getName() == 'booking.index' || Route::current()->getName() == 'booking.render.by' ? 'active' : ''}}">
         <a class="nav-link" href="{{ route('booking.index') }}">
             <i class="far fa-fw fa-heart"></i>
             <span>Bookings</span></a>
@@ -31,6 +31,12 @@
         <a class="nav-link" href="">
             <i class="far fa-fw fa-envelope"></i>
             <span>Messages</span></a>
+    </li>
+
+    <li class="nav-item {{ Route::current()->getName() }}">
+        <a class="nav-link" href="">
+            <i class="fas fa-broom"></i>
+            <span>Cleaners</span></a>
     </li>
 
 </ul><!-- end of sidebar -->

@@ -32,4 +32,7 @@ Route::get('/customers/all', 'CustomersController@GetCustomers')->name('customer
 
 Route::get('/calendars', 'CalendarEvent@index')->name('calendar.index');
 
+Route::get('/booking/{id}/status/{type}', 'BookingsController@ChangedStatus')->name('booking.status');
+Route::get('/booking/deleting/{id}', 'BookingsController@destroy')->name('booking.delete');
+
 

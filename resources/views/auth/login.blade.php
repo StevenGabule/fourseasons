@@ -1,13 +1,11 @@
 @extends('layouts.app')
-
-
 @push('css_custom')
     <style>
         .loginColor {
             color: #595d6e;
         }
     </style>
-    @endpush
+@endpush
 @section('content')
     <div class="container">
 

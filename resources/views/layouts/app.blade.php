@@ -29,18 +29,9 @@
     @stack('css_calendar')
     @stack('css_custom')
     <style>
-        body {
-            background-color: #F9F9FC !important;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .fa, .fas, .far {
-            color: #9899ac !important;
-        }
-
-        .fas.fa-angle-up {
-            color: #fff !important;
-        }
+        body { background-color: #F9F9FC !important;font-family: 'Montserrat', sans-serif;}
+        .fa, .fas, .far { color: #9899ac !important; }
+        .fas.fa-angle-up { color: #fff !important; }
     </style>
 </head>
 <body id="page-top">
@@ -88,10 +79,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('js/sb-admin.min.js') }}"></script>
-
-<!-- Demo scripts for this page-->
-{{--<script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
-<script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>--}}
+{{--<script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>--}}
 <!-- Scripts -->
 @stack('scripts')
 @stack('calendar')

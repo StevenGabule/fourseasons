@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\BookingService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
@@ -25,24 +26,29 @@ class BookingsController extends Controller
         if (request()->ajax()) {
             return DataTables::of(DB::table('customer_bookings_p')->get())
                 ->addColumn('action', function ($data) {
-                   $button = '<div class="dropdown">
-                                  <a class="btn btn-light font-weight-bold shadow" style="font-size: 20px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    ...
-                                  </a>
+                    $button = <<<EOT
+                        <div class="dropdown bookingCustomer">
+                          <a class="btn btn-light shadow-sm" href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-h fa-sm fa-fw"></i>
+                          </a>
 
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>';
+                          <div class="dropdown-menu" style="font-size: 11px;width: 50px;" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item font-weight-bold" href="/booking/$data->id"><i class="fas fa-calendar-week"></i> Show Details</a>
+                            <h6 class="dropdown-header font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
+                            <a class="dropdown-item font-weight-bold ml-2 booking_completed" id="$data->id" href="javascript:void(0)"><i class="fas fa-check"></i> Completed</a>
+                            <a class="dropdown-item font-weight-bold ml-2 booking_cancel" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Cancel</a>
+                            <a class="dropdown-item font-weight-bold ml-2 booking_fraud" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Fraud</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item font-weight-bold bookingEditing" href="/booking/edit/$data->id"><i class="fas fa-user-edit"></i> Edit Booking</a>
+                            <a class="dropdown-item font-weight-bold bookingDeleting" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Delete Booking</a>
+                          </div>
+                        </div>
+EOT;
                     return $button;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
-//        return view('bookingData');
     }
 
     public function renderBookingCompleted()
@@ -50,18 +56,24 @@ class BookingsController extends Controller
         if (request()->ajax()) {
             return DataTables::of(DB::table('customer_bookings_c')->get())
                 ->addColumn('action', function ($data) {
-                     $button = '<div class="dropdown">
-                                  <a class="btn btn-light font-weight-bold shadow" style="font-size: 20px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    ...
-                                  </a>
+                    $button = <<<EOT
+                        <div class="dropdown bookingCustomer">
+                          <a class="btn btn-light shadow-sm" href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-h fa-sm fa-fw"></i>
+                          </a>
 
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>';
+                          <div class="dropdown-menu" style="font-size: 11px;width: 50px;" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item font-weight-bold" href="/booking/$data->id"><i class="fas fa-calendar-week"></i> Show Details</a>
+                            <h6 class="dropdown-header font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_progress" id="$data->id" href="javascript:void(0)"><i class="fas fa-hourglass-half"></i> Pending</a>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_cancel" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Cancel</a>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_fraud" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Fraud</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item font-weight-bold bookingEditing" href="/booking/edit/$data->id"><i class="fas fa-user-edit"></i> Edit Booking</a>
+                            <a class="dropdown-item font-weight-bold bookingDeleting" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Delete Booking</a>
+                          </div>
+                        </div>
+EOT;
                     return $button;
                 })
                 ->rawColumns(['action'])
@@ -74,18 +86,24 @@ class BookingsController extends Controller
         if (request()->ajax()) {
             return DataTables::of(DB::table('customer_bookings_cancelled')->get())
                 ->addColumn('action', function ($data) {
-                     $button = '<div class="dropdown">
-                                  <a class="btn btn-light font-weight-bold shadow" style="font-size: 20px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    ...
-                                  </a>
+                    $button = <<<EOT
+                        <div class="dropdown bookingCustomer">
+                          <a class="btn btn-light shadow-sm" href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-h fa-sm fa-fw"></i>
+                          </a>
 
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>';
+                          <div class="dropdown-menu" style="font-size: 11px;width: 50px;" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item font-weight-bold" href="/booking/$data->id"><i class="fas fa-calendar-week"></i> Show Details</a>
+                            <h6 class="dropdown-header font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_progress" id="$data->id" href="javascript:void(0)"<i class="fas fa-hourglass-half"></i> Pending</a>
+                            <a class="dropdown-item font-weight-bold ml-2 booking_completed" id="$data->id" href="javascript:void(0)"><i class="fas fa-check"></i> Completed</a>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_fraud" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Fraud</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item font-weight-bold bookingEditing" href="/booking/edit/$data->id"><i class="fas fa-user-edit"></i> Edit Booking</a>
+                            <a class="dropdown-item font-weight-bold bookingDeleting" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Delete Booking</a>
+                          </div>
+                        </div>
+EOT;
                     return $button;
                 })
                 ->rawColumns(['action'])
@@ -98,23 +116,49 @@ class BookingsController extends Controller
         if (request()->ajax()) {
             return DataTables::of(DB::table('customer_bookings_fraud')->get())
                 ->addColumn('action', function ($data) {
-                     $button = '<div class="dropdown">
-                                  <a class="btn btn-light font-weight-bold shadow" style="font-size: 20px" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    ...
-                                  </a>
+                    $button = <<<EOT
+                        <div class="dropdown bookingCustomer">
+                          <a class="btn btn-light shadow-sm" href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-h fa-sm fa-fw"></i>
+                          </a>
 
-                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                  </div>
-                                </div>';
+                          <div class="dropdown-menu" style="font-size: 11px;width: 50px;" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item font-weight-bold" href="/booking/$data->id"><i class="fas fa-calendar-week"></i> Show Details</a>
+                            <h6 class="dropdown-header font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_progress" id="$data->id" href="javascript:void(0)"><i class="fas fa-check"></i> Pending</a>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_cancel" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Cancel</a>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_fraud" id="$data->id" href="javascript:void(0)"><i class="fas fa-hourglass-half"></i> Completed</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item font-weight-bold bookingEditing" href="/booking/edit/$data->id"><i class="fas fa-user-edit"></i> Edit Booking</a>
+                            <a class="dropdown-item font-weight-bold bookingDeleting" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Delete Booking</a>
+                          </div>
+                        </div>
+EOT;
                     return $button;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
+    }
+
+    public function ChangedStatus($id, $type)
+    {
+        $bookingStatus = Booking::findOrFail($id);
+
+        if ($type == 0)
+            $bookingStatus->status = 0;
+
+        if ($type == 1)
+            $bookingStatus->status = 1;
+
+        if ($type == 2)
+            $bookingStatus->status = 2;
+
+        if ($type == 3)
+            $bookingStatus->status = 3;
+
+        $bookingStatus->update();
+        return redirect()->route('booking.index');
     }
 
     /**
@@ -176,11 +220,15 @@ class BookingsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Booking $bookings
+     * @param $id
      * @return Response
      */
-    public function destroy(Booking $bookings)
+    public function destroy($id)
     {
-        //
+        Booking::find($id)->delete();
+        BookingService::where('booking_id', $id)->delete();
+        return redirect()->route('booking.index');
     }
 }
+
+
