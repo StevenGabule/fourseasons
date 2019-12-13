@@ -21,6 +21,37 @@ class BookingsController extends Controller
         return view('booking.index');
     }
 
+    public function allReservation()
+    {
+        if (request()->ajax()) {
+            return DataTables::of(DB::table('booking_all')->get())
+                ->addColumn('action', function ($data) {
+                    $button = <<<EOT
+                        <div class="dropdown bookingCustomer">
+                          <a class="btn btn-light shadow-sm" href="javascript:void(0)" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-h fa-sm fa-fw"></i>
+                          </a>
+
+                          <div class="dropdown-menu" style="font-size: 11px;width: 50px;" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item font-weight-bold" href="/booking/$data->id"><i class="fas fa-calendar-week"></i> Show Details</a>
+                            <h6 class="dropdown-header font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
+                            <a class="dropdown-item font-weight-bold ml-2 completed_progress" id="$data->id" href="javascript:void(0)"><i class="fas fa-hourglass-half"></i> Pending</a>
+                            <a class="dropdown-item font-weight-bold ml-2 booking_completed" id="$data->id" href="javascript:void(0)"><i class="fas fa-check"></i> Completed</a>
+                            <a class="dropdown-item font-weight-bold ml-2 booking_cancel" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Cancel</a>
+                            <a class="dropdown-item font-weight-bold ml-2 booking_fraud" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Fraud</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item font-weight-bold bookingEditing" href="/booking/edit/$data->id"><i class="fas fa-user-edit"></i> Edit Booking</a>
+                            <a class="dropdown-item font-weight-bold bookingDeleting" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Delete Booking</a>
+                          </div>
+                        </div>
+EOT;
+                    return $button;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+    }
+
     public function renderBooking()
     {
         if (request()->ajax()) {
@@ -64,7 +95,9 @@ EOT;
 
                           <div class="dropdown-menu" style="font-size: 11px;width: 50px;" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item font-weight-bold" href="/booking/$data->id"><i class="fas fa-calendar-week"></i> Show Details</a>
+
                             <h6 class="dropdown-header font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
+                            
                             <a class="dropdown-item font-weight-bold ml-2 completed_progress" id="$data->id" href="javascript:void(0)"><i class="fas fa-hourglass-half"></i> Pending</a>
                             <a class="dropdown-item font-weight-bold ml-2 completed_cancel" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Cancel</a>
                             <a class="dropdown-item font-weight-bold ml-2 completed_fraud" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Fraud</a>

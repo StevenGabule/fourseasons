@@ -2,7 +2,7 @@
 <ul class="sidebar navbar-nav shadow toggled" style="padding-top: 1%;">
 
     <li class="nav-item {{ Route::current()->getName() == 'home' ? 'active' : ''}}">
-        <a class="nav-link" href="/home">
+        <a class="nav-link" href="/admin/home">
             <i class="fas fa-fw fa-dice-d6"></i>
             <span>Dashboard</span>
         </a>

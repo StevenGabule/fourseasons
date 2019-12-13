@@ -79,7 +79,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{ asset('js/sb-admin.min.js') }}"></script>
-{{--<script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>--}}
+
 <!-- Scripts -->
 @stack('scripts')
 @stack('calendar')

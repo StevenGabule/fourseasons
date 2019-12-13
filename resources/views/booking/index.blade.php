@@ -22,10 +22,7 @@
         }
 
         table.dataTable.table-sm > thead > tr > th:nth-child(1),
-        table.dataTable td:nth-child(1){
-            padding-left: 15px;
-
-        }
+        table.dataTable td:nth-child(1) { padding-left: 15px; }
 
         div.dataTables_wrapper div.dataTables_info {
             margin-left: 2%;

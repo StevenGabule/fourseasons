@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/booking', 'BookingsController@index')->name('booking.index');
+Route::get('/booking/all', 'BookingsController@allReservation')->name('booking.all');
 Route::get('/booking/progress', 'BookingsController@renderBooking')->name('booking.render');
 Route::get('/booking/completed', 'BookingsController@renderBookingCompleted')->name('booking.render.completed');
 Route::get('/booking/cancelled', 'BookingsController@renderBookingCancelled')->name('booking.render.cancelled');
@@ -35,4 +36,4 @@ Route::get('/calendars', 'CalendarEvent@index')->name('calendar.index');
 Route::get('/booking/{id}/status/{type}', 'BookingsController@ChangedStatus')->name('booking.status');
 Route::get('/booking/deleting/{id}', 'BookingsController@destroy')->name('booking.delete');
 
-
+Route::get('/cleaners', 'CleanersController@index')->nam('cleaners.all');

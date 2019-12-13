@@ -1,5 +1,77 @@
 @extends('layouts.app')
 
+@push('css_custom')
+    <style>
+        .change-primary {
+            background-color: #22B9FF;
+            color: white
+        }
+
+        .change-warning {
+            background-color: #FFB822;
+            color: white;
+        }
+
+        .change-success {
+            background-color: #FD27EB;
+            color: white;
+        }
+
+        .change-secondary {
+            background-color: #1DC9B7;
+            color: white;
+        }
+
+        .far.fa-fw.fa.fa-clipboard,
+        .fas.fa-fw.fa-user-clock,
+        .fas.fa-fw.fa-chalkboard-teacher,
+        .card-body-icon .far.fa-fw.fa-envelope,
+        .fas.fa-angle-right {
+            color: white !important;
+        }
+
+        td { vertical-align: middle !important; }
+        td { vertical-align: middle !important; }
+        table.dataTable.table-sm > thead > tr > th { color: #74788d !important;}
+        table.dataTable { border-collapse: collapse !important;}
+        .default-table-size { font-size: 12px !important;}
+        .frequency {display:block;width: 100px;text-align: center; color: white; font-size: 13px;border-radius: 25px}
+        .monthly { background: #fd27eb;}
+        .weekly { background: #1dc9b7;}
+        .biweekly { background: #ffb822;}
+        .onetime { background: #22b9ff;}
+        .dataTables_length {
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+        div.dataTables_wrapper div.dataTables_filter label {
+            margin-right: 2%;
+            margin-top: 2%;
+        }
+
+        table.dataTable.table-sm > thead > tr > th:nth-child(1),
+        table.dataTable td:nth-child(1) { padding-left: 15px; }
+
+        div.dataTables_wrapper div.dataTables_info {
+            margin-left: 2%;
+            padding-bottom: 4%;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+            margin-right: 2%;
+            font-size: 11px;
+        }
+        tr.odd,
+        tr.even {
+            color: #595d6e;
+        }
+
+        .card-footer { border-top: none; }
+    </style>
+    <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
+@endpush
+
 @section('content')
     <div id="wrapper">
         @include('layouts._sidebar')
@@ -7,7 +79,7 @@
             <div class="container-fluid">
 
                 <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
+                <ol class="breadcrumb small">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
@@ -15,12 +87,29 @@
                 <!-- Icon Cards-->
                 <div class="row">
                     <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-primary o-hidden h-100">
-                            <div class="card-body">
+                        <div class="card change-primary text-white o-hidden h-100 border-0 shadow">
+                            <div class="card-body pb-0">
                                 <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-comments"></i>
+                                    <i class="far fa-fw fa fa-clipboard"></i>
                                 </div>
-                                <div class="mr-5">26 New Messages!</div>
+                                <div class="mr-5">Total Bookings</div>
+                                <div class="mr-5 font-weight-bold mt-1 pb-2">26</div>
+                            </div>
+                            <a class="card-footer  text-white clearfix small z-1" href="#">
+                                <span class="float-left">View Details</span>
+                                <span class="float-right"><i class="fas fa-angle-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 mb-3">
+                        <div class="card change-success text-white o-hidden h-100 border-0 shadow">
+                            <div class="card-body pb-0">
+                                <div class="card-body-icon">
+                                    <i class="fas fa-fw fa-user-clock"></i>
+                                </div>
+                                <div class="mr-5">Total Customers</div>
+                                <div class="mr-5 font-weight-bold mt-1 pb-2">26</div>
+
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
                                 <span class="float-left">View Details</span>
@@ -29,562 +118,286 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-warning o-hidden h-100">
-                            <div class="card-body">
+                        <div class="card change-warning text-white o-hidden h-100 border-0 shadow">
+                            <div class="card-body pb-0">
                                 <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-list"></i>
+                                    <i class="fas fa-fw fa-chalkboard-teacher"></i>
                                 </div>
-                                <div class="mr-5">11 New Tasks!</div>
+                                <div class="mr-5">Total Visitor</div>
+                                <div class="mr-5 font-weight-bold mt-1 pb-2">26</div>
+
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
                                 <span class="float-left">View Details</span>
-                                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
+                                <span class="float-right"><i class="fas fa-angle-right"></i></span>
                             </a>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-success o-hidden h-100">
-                            <div class="card-body">
+                        <div class="card change-secondary text-white o-hidden h-100 border-0 shadow">
+                            <div class="card-body pb-0">
                                 <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-shopping-cart"></i>
+                                    <i class="far fa-fw fa-envelope"></i>
                                 </div>
-                                <div class="mr-5">123 New Orders!</div>
+                                <div class="mr-5">Total Messengers</div>
+                                <div class="mr-5 font-weight-bold mt-1 pb-2">26</div>
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
                                 <span class="float-left">View Details</span>
-                                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 mb-3">
-                        <div class="card text-white bg-danger o-hidden h-100">
-                            <div class="card-body">
-                                <div class="card-body-icon">
-                                    <i class="fas fa-fw fa-life-ring"></i>
-                                </div>
-                                <div class="mr-5">13 New Tickets!</div>
-                            </div>
-                            <a class="card-footer text-white clearfix small z-1" href="#">
-                                <span class="float-left">View Details</span>
-                                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
+                                <span class="float-right"><i class="fas fa-angle-right"></i></span>
                             </a>
                         </div>
                     </div>
                 </div><!-- end of row -->
 
                 <!-- Area Chart Example-->
-                <div class="card mb-3">
-                    <div class="card-header">
+                <div class="card border-0 mb-3 shadow-lg">
+                    <div class="card-header border-0 bg-transparent smaller font-weight-bold">
                         <i class="fas fa-chart-area"></i>
-                        Area Chart Example
+                        Visitor Analytics Bar Chart
                     </div>
                     <div class="card-body">
                         <canvas id="myAreaChart" width="100%" height="30"></canvas>
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                 </div><!-- end of card for chart -->
 
                 <!-- DataTables Example -->
-                <div class="card mb-3">
-                    <div class="card-header">
+                <div class="card mb-3 border-0">
+                    <div class="card-header bg-transparent border-0 smaller font-weight-bold">
                         <i class="fas fa-table"></i>
-                        Data Table Example
+                        All Booking Reservation
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <table class="table table-sm table-bordered small" id="dataTableBooking" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th width="20%">Date</th>
+                                    <th>Type</th>
+                                    <th>Customer</th>
+                                    <th>Location</th>
+                                    <th>Frequency</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
-                                <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                                </tfoot>
-                                <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011/07/25</td>
-                                    <td>$170,750</td>
-                                </tr>
-                                <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    <td>2009/01/12</td>
-                                    <td>$86,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Cedric Kelly</td>
-                                    <td>Senior Javascript Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>2012/03/29</td>
-                                    <td>$433,060</td>
-                                </tr>
-                                <tr>
-                                    <td>Airi Satou</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>33</td>
-                                    <td>2008/11/28</td>
-                                    <td>$162,700</td>
-                                </tr>
-                                <tr>
-                                    <td>Brielle Williamson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>New York</td>
-                                    <td>61</td>
-                                    <td>2012/12/02</td>
-                                    <td>$372,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Herrod Chandler</td>
-                                    <td>Sales Assistant</td>
-                                    <td>San Francisco</td>
-                                    <td>59</td>
-                                    <td>2012/08/06</td>
-                                    <td>$137,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Rhona Davidson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Tokyo</td>
-                                    <td>55</td>
-                                    <td>2010/10/14</td>
-                                    <td>$327,900</td>
-                                </tr>
-                                <tr>
-                                    <td>Colleen Hurst</td>
-                                    <td>Javascript Developer</td>
-                                    <td>San Francisco</td>
-                                    <td>39</td>
-                                    <td>2009/09/15</td>
-                                    <td>$205,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Sonya Frost</td>
-                                    <td>Software Engineer</td>
-                                    <td>Edinburgh</td>
-                                    <td>23</td>
-                                    <td>2008/12/13</td>
-                                    <td>$103,600</td>
-                                </tr>
-                                <tr>
-                                    <td>Jena Gaines</td>
-                                    <td>Office Manager</td>
-                                    <td>London</td>
-                                    <td>30</td>
-                                    <td>2008/12/19</td>
-                                    <td>$90,560</td>
-                                </tr>
-                                <tr>
-                                    <td>Quinn Flynn</td>
-                                    <td>Support Lead</td>
-                                    <td>Edinburgh</td>
-                                    <td>22</td>
-                                    <td>2013/03/03</td>
-                                    <td>$342,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Charde Marshall</td>
-                                    <td>Regional Director</td>
-                                    <td>San Francisco</td>
-                                    <td>36</td>
-                                    <td>2008/10/16</td>
-                                    <td>$470,600</td>
-                                </tr>
-                                <tr>
-                                    <td>Haley Kennedy</td>
-                                    <td>Senior Marketing Designer</td>
-                                    <td>London</td>
-                                    <td>43</td>
-                                    <td>2012/12/18</td>
-                                    <td>$313,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Tatyana Fitzpatrick</td>
-                                    <td>Regional Director</td>
-                                    <td>London</td>
-                                    <td>19</td>
-                                    <td>2010/03/17</td>
-                                    <td>$385,750</td>
-                                </tr>
-                                <tr>
-                                    <td>Michael Silva</td>
-                                    <td>Marketing Designer</td>
-                                    <td>London</td>
-                                    <td>66</td>
-                                    <td>2012/11/27</td>
-                                    <td>$198,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Paul Byrd</td>
-                                    <td>Chief Financial Officer (CFO)</td>
-                                    <td>New York</td>
-                                    <td>64</td>
-                                    <td>2010/06/09</td>
-                                    <td>$725,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Gloria Little</td>
-                                    <td>Systems Administrator</td>
-                                    <td>New York</td>
-                                    <td>59</td>
-                                    <td>2009/04/10</td>
-                                    <td>$237,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Bradley Greer</td>
-                                    <td>Software Engineer</td>
-                                    <td>London</td>
-                                    <td>41</td>
-                                    <td>2012/10/13</td>
-                                    <td>$132,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Dai Rios</td>
-                                    <td>Personnel Lead</td>
-                                    <td>Edinburgh</td>
-                                    <td>35</td>
-                                    <td>2012/09/26</td>
-                                    <td>$217,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Jenette Caldwell</td>
-                                    <td>Development Lead</td>
-                                    <td>New York</td>
-                                    <td>30</td>
-                                    <td>2011/09/03</td>
-                                    <td>$345,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Yuri Berry</td>
-                                    <td>Chief Marketing Officer (CMO)</td>
-                                    <td>New York</td>
-                                    <td>40</td>
-                                    <td>2009/06/25</td>
-                                    <td>$675,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Caesar Vance</td>
-                                    <td>Pre-Sales Support</td>
-                                    <td>New York</td>
-                                    <td>21</td>
-                                    <td>2011/12/12</td>
-                                    <td>$106,450</td>
-                                </tr>
-                                <tr>
-                                    <td>Doris Wilder</td>
-                                    <td>Sales Assistant</td>
-                                    <td>Sidney</td>
-                                    <td>23</td>
-                                    <td>2010/09/20</td>
-                                    <td>$85,600</td>
-                                </tr>
-                                <tr>
-                                    <td>Angelica Ramos</td>
-                                    <td>Chief Executive Officer (CEO)</td>
-                                    <td>London</td>
-                                    <td>47</td>
-                                    <td>2009/10/09</td>
-                                    <td>$1,200,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Gavin Joyce</td>
-                                    <td>Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>42</td>
-                                    <td>2010/12/22</td>
-                                    <td>$92,575</td>
-                                </tr>
-                                <tr>
-                                    <td>Jennifer Chang</td>
-                                    <td>Regional Director</td>
-                                    <td>Singapore</td>
-                                    <td>28</td>
-                                    <td>2010/11/14</td>
-                                    <td>$357,650</td>
-                                </tr>
-                                <tr>
-                                    <td>Brenden Wagner</td>
-                                    <td>Software Engineer</td>
-                                    <td>San Francisco</td>
-                                    <td>28</td>
-                                    <td>2011/06/07</td>
-                                    <td>$206,850</td>
-                                </tr>
-                                <tr>
-                                    <td>Fiona Green</td>
-                                    <td>Chief Operating Officer (COO)</td>
-                                    <td>San Francisco</td>
-                                    <td>48</td>
-                                    <td>2010/03/11</td>
-                                    <td>$850,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Shou Itou</td>
-                                    <td>Regional Marketing</td>
-                                    <td>Tokyo</td>
-                                    <td>20</td>
-                                    <td>2011/08/14</td>
-                                    <td>$163,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Michelle House</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Sidney</td>
-                                    <td>37</td>
-                                    <td>2011/06/02</td>
-                                    <td>$95,400</td>
-                                </tr>
-                                <tr>
-                                    <td>Suki Burks</td>
-                                    <td>Developer</td>
-                                    <td>London</td>
-                                    <td>53</td>
-                                    <td>2009/10/22</td>
-                                    <td>$114,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Prescott Bartlett</td>
-                                    <td>Technical Author</td>
-                                    <td>London</td>
-                                    <td>27</td>
-                                    <td>2011/05/07</td>
-                                    <td>$145,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Gavin Cortez</td>
-                                    <td>Team Leader</td>
-                                    <td>San Francisco</td>
-                                    <td>22</td>
-                                    <td>2008/10/26</td>
-                                    <td>$235,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Martena Mccray</td>
-                                    <td>Post-Sales support</td>
-                                    <td>Edinburgh</td>
-                                    <td>46</td>
-                                    <td>2011/03/09</td>
-                                    <td>$324,050</td>
-                                </tr>
-                                <tr>
-                                    <td>Unity Butler</td>
-                                    <td>Marketing Designer</td>
-                                    <td>San Francisco</td>
-                                    <td>47</td>
-                                    <td>2009/12/09</td>
-                                    <td>$85,675</td>
-                                </tr>
-                                <tr>
-                                    <td>Howard Hatfield</td>
-                                    <td>Office Manager</td>
-                                    <td>San Francisco</td>
-                                    <td>51</td>
-                                    <td>2008/12/16</td>
-                                    <td>$164,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Hope Fuentes</td>
-                                    <td>Secretary</td>
-                                    <td>San Francisco</td>
-                                    <td>41</td>
-                                    <td>2010/02/12</td>
-                                    <td>$109,850</td>
-                                </tr>
-                                <tr>
-                                    <td>Vivian Harrell</td>
-                                    <td>Financial Controller</td>
-                                    <td>San Francisco</td>
-                                    <td>62</td>
-                                    <td>2009/02/14</td>
-                                    <td>$452,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Timothy Mooney</td>
-                                    <td>Office Manager</td>
-                                    <td>London</td>
-                                    <td>37</td>
-                                    <td>2008/12/11</td>
-                                    <td>$136,200</td>
-                                </tr>
-                                <tr>
-                                    <td>Jackson Bradshaw</td>
-                                    <td>Director</td>
-                                    <td>New York</td>
-                                    <td>65</td>
-                                    <td>2008/09/26</td>
-                                    <td>$645,750</td>
-                                </tr>
-                                <tr>
-                                    <td>Olivia Liang</td>
-                                    <td>Support Engineer</td>
-                                    <td>Singapore</td>
-                                    <td>64</td>
-                                    <td>2011/02/03</td>
-                                    <td>$234,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Bruno Nash</td>
-                                    <td>Software Engineer</td>
-                                    <td>London</td>
-                                    <td>38</td>
-                                    <td>2011/05/03</td>
-                                    <td>$163,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Sakura Yamamoto</td>
-                                    <td>Support Engineer</td>
-                                    <td>Tokyo</td>
-                                    <td>37</td>
-                                    <td>2009/08/19</td>
-                                    <td>$139,575</td>
-                                </tr>
-                                <tr>
-                                    <td>Thor Walton</td>
-                                    <td>Developer</td>
-                                    <td>New York</td>
-                                    <td>61</td>
-                                    <td>2013/08/11</td>
-                                    <td>$98,540</td>
-                                </tr>
-                                <tr>
-                                    <td>Finn Camacho</td>
-                                    <td>Support Engineer</td>
-                                    <td>San Francisco</td>
-                                    <td>47</td>
-                                    <td>2009/07/07</td>
-                                    <td>$87,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Serge Baldwin</td>
-                                    <td>Data Coordinator</td>
-                                    <td>Singapore</td>
-                                    <td>64</td>
-                                    <td>2012/04/09</td>
-                                    <td>$138,575</td>
-                                </tr>
-                                <tr>
-                                    <td>Zenaida Frank</td>
-                                    <td>Software Engineer</td>
-                                    <td>New York</td>
-                                    <td>63</td>
-                                    <td>2010/01/04</td>
-                                    <td>$125,250</td>
-                                </tr>
-                                <tr>
-                                    <td>Zorita Serrano</td>
-                                    <td>Software Engineer</td>
-                                    <td>San Francisco</td>
-                                    <td>56</td>
-                                    <td>2012/06/01</td>
-                                    <td>$115,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Jennifer Acosta</td>
-                                    <td>Junior Javascript Developer</td>
-                                    <td>Edinburgh</td>
-                                    <td>43</td>
-                                    <td>2013/02/01</td>
-                                    <td>$75,650</td>
-                                </tr>
-                                <tr>
-                                    <td>Cara Stevens</td>
-                                    <td>Sales Assistant</td>
-                                    <td>New York</td>
-                                    <td>46</td>
-                                    <td>2011/12/06</td>
-                                    <td>$145,600</td>
-                                </tr>
-                                <tr>
-                                    <td>Hermione Butler</td>
-                                    <td>Regional Director</td>
-                                    <td>London</td>
-                                    <td>47</td>
-                                    <td>2011/03/21</td>
-                                    <td>$356,250</td>
-                                </tr>
-                                <tr>
-                                    <td>Lael Greer</td>
-                                    <td>Systems Administrator</td>
-                                    <td>London</td>
-                                    <td>21</td>
-                                    <td>2009/02/27</td>
-                                    <td>$103,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Jonas Alexander</td>
-                                    <td>Developer</td>
-                                    <td>San Francisco</td>
-                                    <td>30</td>
-                                    <td>2010/07/14</td>
-                                    <td>$86,500</td>
-                                </tr>
-                                <tr>
-                                    <td>Shad Decker</td>
-                                    <td>Regional Director</td>
-                                    <td>Edinburgh</td>
-                                    <td>51</td>
-                                    <td>2008/11/13</td>
-                                    <td>$183,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Michael Bruce</td>
-                                    <td>Javascript Developer</td>
-                                    <td>Singapore</td>
-                                    <td>29</td>
-                                    <td>2011/06/27</td>
-                                    <td>$183,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Donna Snider</td>
-                                    <td>Customer Support</td>
-                                    <td>New York</td>
-                                    <td>27</td>
-                                    <td>2011/01/25</td>
-                                    <td>$112,000</td>
-                                </tr>
-                                </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                 </div><!-- end of card -->
             </div> <!-- /.container-fluid -->
             <!-- Sticky Footer -->
             @include('layouts._footer')
         </div><!-- end of class content wrapper -->
     </div><!-- end of id content wrapper -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="BookingDeletingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure to remove?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" id="deletingBooking_" class="btn btn-danger btn-sm">Delete Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+
+    <script>
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "preventDuplicates": true,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "2000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        $(document).on('click', '.completed_progress', function() {
+            let booking_completedID = $(this).attr('id');
+            let type = 0; // 0 process | 1 completed | 2 cancel |  3 fraud
+            $.ajax({
+                url: "booking/" + booking_completedID + "/status/" + type,
+                beforeSend: function () {
+                    toastr.error('Request processing...');
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#dataTableBooking').DataTable().ajax.reload();
+                        toastr.success('Requested completed!');
+                    }, 2000);
+                }
+            });
+        });
+
+        $(document).on('click', '.booking_completed', function() {
+            let booking_completedID = $(this).attr('id');
+            let type = 1; // 0 process | 1 completed | 2 cancel |  3 fraud
+            $.ajax({
+                url: "booking/" + booking_completedID + "/status/" + type,
+                beforeSend: function () {
+                    toastr.info('Request processing...');
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#dataTableBooking').DataTable().ajax.reload();
+                        toastr.success('Requested completed!');
+                    }, 300);
+                }
+            });
+        });
+
+        $(document).on('click', '.booking_cancel, .completed_cancel', function() {
+            let bookingCancelID = $(this).attr('id');
+            let type = 2; // 0 process | 1 completed | 2 cancel |  3 fraud
+            $.ajax({
+                url: "booking/" + bookingCancelID + "/status/" + type,
+                beforeSend: function () {
+                    toastr.info('Request processing...');
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#dataTableBooking').DataTable().ajax.reload();
+                        toastr.success('Requested completed!');
+                    }, 2000);
+                }
+            });
+        });
+
+        $(document).on('click', '.booking_fraud, .completed_fraud', function() {
+            let bookingFraudID = $(this).attr('id');
+            let type = 3; // 0 process | 1 completed | 2 cancel |  3 fraud
+            $.ajax({
+                url: "booking/" + bookingFraudID + "/status/" + type,
+                beforeSend: function () {
+                    toastr.info('Request processing...');
+                },
+                success: function (data) {
+                    setTimeout(function () {
+                        $('#dataTableBooking').DataTable().ajax.reload();
+                        toastr.success('Requested completed!');
+                    }, 2000);
+                }
+            });
+        });
+
+        let booking_ID;
+        $(document).on('click', '.bookingDeleting', function() {
+            booking_ID = $(this).attr('id');
+            $("#deletingBooking_").text("Delete Booking");
+            $("#BookingDeletingModal").modal('show');
+        });
+
+        $(document).on('click', '#deletingBooking_', function() {
+            $.ajax({
+                url: "booking/deleting/" + booking_ID,
+                beforeSend: function () {
+                    $('#deletingBooking_').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Deleting...');
+                },
+                success: function (data) {
+                    $('#dataTableBooking').DataTable().ajax.reload();
+                    $('#BookingDeletingModal').modal('hide');
+                }
+            });
+        });
+
+        $(document).ready(function() {
+
+            function formatDate(_date, _time="") {
+                let d = new Date(_date);
+                let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                return '<span class="font-weight-bold">' + months[d.getMonth()].substring(0, 3) + ' ' + d.getDate() + '</span> / ' + _time + ' / <span class="font-weight-bold">' + days[d.getDay()] + '</span>';
+            }
+
+            $('#dataTableBooking').DataTable({
+                processing: true,
+                serverSide: true,
+                ordering: false,
+                ajax: "{{ route('booking.all') }}",
+                columnDefs: [{ targets: [0,1,3,4], searchable: false }],
+                columns: [
+                    {
+                        data: {
+                            service_date_start: 'service_date_start',
+                            service_time: 'service_time',
+                        },
+                        render: (data) => formatDate(data['service_date_start'], data['service_time'])
+                    },
+                    {
+                        data: 'service_type',
+                        name: 'service_type',
+                        render: function (data) {
+                            if (parseInt(data) === 1) {
+                                return "Regular";
+                            } else if (parseInt(data) === 2) {
+                                return "Deep Clean";
+                            } else {
+                                return "Tenancy";
+                            }
+                        },
+                    },
+                    {
+                        data: 'fullName',
+                        name: 'fullName',
+                        render: (data) => '<span class="font-weight-bold">' + data + '</span>'
+                    },
+                    {
+                        data: 'location',
+                        name: 'location',
+                        render: function (data) {
+                            return data.substr(0,80) + '...';
+                        }
+                    },
+                    {
+                        data: 'frequency',
+                        name: 'frequency',
+                        render: function (data) {
+                            if (parseInt(data) === 1) {
+                                return "<span class='frequency onetime'>One time</span>";
+                            } else if (parseInt(data) === 2) {
+                                return "<span class='frequency weekly'>Weekly</span>";
+                            } else if (parseInt(data) === 3) {
+                                return "<span class='frequency biweekly'>Biweekly</span>";
+                            } else {
+                                return "<span class='frequency monthly'>Monthly</span>";
+                            }
+                        },
+                        orderable: false
+                    },
+                    {
+                        data: 'action',
+                        name: 'action',
+                        orderable: false
+                    }
+                ]
+            });
+        })
+    </script>
+@endpush
