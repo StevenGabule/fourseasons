@@ -2,7 +2,7 @@
 <ul class="sidebar navbar-nav shadow toggled" style="padding-top: 1%;">
 
     <li class="nav-item {{ Route::current()->getName() == 'home' ? 'active' : ''}}">
-        <a class="nav-link" href="/admin/home">
+        <a class="nav-link" href="{{ route('home') }}">
             <i class="fas fa-fw fa-dice-d6"></i>
             <span>Dashboard</span>
         </a>
@@ -27,14 +27,14 @@
             <span>Calenders</span></a>
     </li>
 
-    <li class="nav-item {{ Route::current()->getName() }}">
-        <a class="nav-link" href="">
+    <li class="nav-item {{ Route::current()->getName() == 'messages.index' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('messages.index') }}">
             <i class="far fa-fw fa-envelope"></i>
             <span>Messages</span></a>
     </li>
 
-    <li class="nav-item {{ Route::current()->getName() }}">
-        <a class="nav-link" href="">
+    <li class="nav-item {{ Route::current()->getName() == 'cleaners.all' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('cleaners.all') }}">
             <i class="fas fa-broom"></i>
             <span>Cleaners</span></a>
     </li>

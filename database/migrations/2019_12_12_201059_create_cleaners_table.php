@@ -20,7 +20,7 @@ class CreateCleanersTable extends Migration
             $table->string('owner', 100);
             $table->string('email', 100);
             $table->tinyInteger('members');
-            $table->string('specialty', 100);
+            $table->string('specialty');
             $table->text('location');
             $table->string('phoneNumber', 50);
             $table->tinyInteger('status')->default(1)->comment('1 = available | 0 = unavailable');

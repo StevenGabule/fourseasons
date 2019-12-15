@@ -36,4 +36,16 @@ Route::get('/calendars', 'CalendarEvent@index')->name('calendar.index');
 Route::get('/booking/{id}/status/{type}', 'BookingsController@ChangedStatus')->name('booking.status');
 Route::get('/booking/deleting/{id}', 'BookingsController@destroy')->name('booking.delete');
 
-Route::get('/cleaners', 'CleanersController@index')->nam('cleaners.all');
+Route::get('/cleaners', 'CleanersController@index')->name('cleaners.all');
+Route::get('/cleaners/all', 'CleanersController@cleanersAll')->name('cleaners.get');
+Route::get('/cleaners/{id}/edit', 'CleanersController@edit')->name('cleaners.edit');
+Route::post('/cleaners/add', 'CleanersController@store')->name('cleaners.store');
+Route::post('/cleaners/update', 'CleanersController@update')->name('cleaners.update');
+Route::get('/cleaners/deleting/{id}', 'CleanersController@destroy')->name('cleaners.deleting');
+Route::get('/cleaners/availability/{id}/status/{status}', 'CleanersController@ChangeStatus')->name('cleaners.availability');
+
+Route::get('/messages', 'MessagesController@index')->name('messages.index');
+Route::get('/messages/all/{status}', 'MessagesController@GetAllMessages')->name('messages.all');
+Route::get('/messages/label/{label}', 'MessagesController@GetAllMessageLabel')->name('messages.label.all');
+Route::post('/messages/store', 'MessagesController@store')->name('messages.store');
+Route::get('/messages/deleting/{id}', 'MessagesController@destroy')->name('messages.destroy');

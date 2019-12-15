@@ -19,6 +19,7 @@ class CustomerBookingServicesSeeder extends Seeder
         DB::table('booking_services')->delete();
         DB::table('bookings')->delete();
         DB::table('customers')->delete();
+        DB::table('users')->delete();
         factory(User::class, 1)->create();
         factory(Customer::class, 100)->create()->each(function($c) {
             $c->bookings()->saveMany(factory(Booking::class, 1)->make())->each(function($bs) {
