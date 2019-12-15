@@ -30,27 +30,65 @@
             color: white !important;
         }
 
-        td { vertical-align: middle !important; }
-        td { vertical-align: middle !important; }
-        table.dataTable.table-sm > thead > tr > th { color: #74788d !important;}
-        table.dataTable { border-collapse: collapse !important;}
-        .default-table-size { font-size: 12px !important;}
-        .frequency {display:block;width: 100px;text-align: center; color: white; font-size: 13px;border-radius: 25px}
-        .monthly { background: #fd27eb;}
-        .weekly { background: #1dc9b7;}
-        .biweekly { background: #ffb822;}
-        .onetime { background: #22b9ff;}
+        td {
+            vertical-align: middle !important;
+        }
+
+        td {
+            vertical-align: middle !important;
+        }
+
+        table.dataTable.table-sm > thead > tr > th {
+            color: #74788d !important;
+        }
+
+        table.dataTable {
+            border-collapse: collapse !important;
+        }
+
+        .default-table-size {
+            font-size: 12px !important;
+        }
+
+        .frequency {
+            display: block;
+            width: 100px;
+            text-align: center;
+            color: white;
+            font-size: 13px;
+            border-radius: 25px
+        }
+
+        .monthly {
+            background: #fd27eb;
+        }
+
+        .weekly {
+            background: #1dc9b7;
+        }
+
+        .biweekly {
+            background: #ffb822;
+        }
+
+        .onetime {
+            background: #22b9ff;
+        }
+
         .dataTables_length {
             margin-left: 2%;
             margin-top: 2%;
         }
+
         div.dataTables_wrapper div.dataTables_filter label {
             margin-right: 2%;
             margin-top: 2%;
         }
 
         table.dataTable.table-sm > thead > tr > th:nth-child(1),
-        table.dataTable td:nth-child(1) { padding-left: 15px; }
+        table.dataTable td:nth-child(1) {
+            padding-left: 15px;
+        }
 
         div.dataTables_wrapper div.dataTables_info {
             margin-left: 2%;
@@ -58,16 +96,20 @@
             font-size: 11px;
             font-weight: bold;
         }
+
         div.dataTables_wrapper div.dataTables_paginate ul.pagination {
             margin-right: 2%;
             font-size: 11px;
         }
+
         tr.odd,
         tr.even {
             color: #595d6e;
         }
 
-        .card-footer { border-top: none; }
+        .card-footer {
+            border-top: none;
+        }
     </style>
     <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
 @endpush
@@ -93,7 +135,7 @@
                                     <i class="far fa-fw fa fa-clipboard"></i>
                                 </div>
                                 <div class="mr-5">Total Bookings</div>
-                                <div class="mr-5 font-weight-bold mt-1 pb-2">26</div>
+                                <div class="mr-5 font-weight-bold mt-1 pb-2">{{ $bookings }}</div>
                             </div>
                             <a class="card-footer  text-white clearfix small z-1" href="#">
                                 <span class="float-left">View Details</span>
@@ -108,7 +150,7 @@
                                     <i class="fas fa-fw fa-user-clock"></i>
                                 </div>
                                 <div class="mr-5">Total Customers</div>
-                                <div class="mr-5 font-weight-bold mt-1 pb-2">26</div>
+                                <div class="mr-5 font-weight-bold mt-1 pb-2">{{ $customers }}</div>
 
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
@@ -140,7 +182,7 @@
                                     <i class="far fa-fw fa-envelope"></i>
                                 </div>
                                 <div class="mr-5">Total Messengers</div>
-                                <div class="mr-5 font-weight-bold mt-1 pb-2">26</div>
+                                <div class="mr-5 font-weight-bold mt-1 pb-2">{{ $messages }}</div>
                             </div>
                             <a class="card-footer text-white clearfix small z-1" href="#">
                                 <span class="float-left">View Details</span>
@@ -169,7 +211,8 @@
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-sm table-bordered small" id="dataTableBooking" width="100%" cellspacing="0">
+                            <table class="table table-sm table-bordered small" id="dataTableBooking" width="100%"
+                                   cellspacing="0">
                                 <thead>
                                 <tr>
                                     <th width="20%">Date</th>
@@ -191,7 +234,8 @@
     </div><!-- end of id content wrapper -->
 
     <!-- Modal -->
-    <div class="modal fade" id="BookingDeletingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="BookingDeletingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -239,7 +283,7 @@
             "hideMethod": "fadeOut"
         };
 
-        $(document).on('click', '.completed_progress', function() {
+        $(document).on('click', '.completed_progress', function () {
             let booking_completedID = $(this).attr('id');
             let type = 0; // 0 process | 1 completed | 2 cancel |  3 fraud
             $.ajax({
@@ -256,7 +300,7 @@
             });
         });
 
-        $(document).on('click', '.booking_completed', function() {
+        $(document).on('click', '.booking_completed', function () {
             let booking_completedID = $(this).attr('id');
             let type = 1; // 0 process | 1 completed | 2 cancel |  3 fraud
             $.ajax({
@@ -273,7 +317,7 @@
             });
         });
 
-        $(document).on('click', '.booking_cancel, .completed_cancel', function() {
+        $(document).on('click', '.booking_cancel, .completed_cancel', function () {
             let bookingCancelID = $(this).attr('id');
             let type = 2; // 0 process | 1 completed | 2 cancel |  3 fraud
             $.ajax({
@@ -290,7 +334,7 @@
             });
         });
 
-        $(document).on('click', '.booking_fraud, .completed_fraud', function() {
+        $(document).on('click', '.booking_fraud, .completed_fraud', function () {
             let bookingFraudID = $(this).attr('id');
             let type = 3; // 0 process | 1 completed | 2 cancel |  3 fraud
             $.ajax({
@@ -308,13 +352,13 @@
         });
 
         let booking_ID;
-        $(document).on('click', '.bookingDeleting', function() {
+        $(document).on('click', '.bookingDeleting', function () {
             booking_ID = $(this).attr('id');
             $("#deletingBooking_").text("Delete Booking");
             $("#BookingDeletingModal").modal('show');
         });
 
-        $(document).on('click', '#deletingBooking_', function() {
+        $(document).on('click', '#deletingBooking_', function () {
             $.ajax({
                 url: "booking/deleting/" + booking_ID,
                 beforeSend: function () {
@@ -327,9 +371,9 @@
             });
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            function formatDate(_date, _time="") {
+            function formatDate(_date, _time = "") {
                 let d = new Date(_date);
                 let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -341,7 +385,7 @@
                 serverSide: true,
                 ordering: false,
                 ajax: "{{ route('booking.all') }}",
-                columnDefs: [{ targets: [0,1,3,4], searchable: false }],
+                columnDefs: [{targets: [0, 1, 3, 4], searchable: false}],
                 columns: [
                     {
                         data: {
@@ -372,7 +416,7 @@
                         data: 'location',
                         name: 'location',
                         render: function (data) {
-                            return data.substr(0,80) + '...';
+                            return data.substr(0, 80) + '...';
                         }
                     },
                     {
@@ -397,6 +441,18 @@
                         orderable: false
                     }
                 ]
+            });
+        });
+
+        $(".BtnLogout").click(function () {
+            $.ajax({
+                url: "user/logout",
+                beforeSend: function () {
+                    $('.BtnLogout').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Wait...');
+                },
+                success: function (data) {
+                    window.location.href = '/login';
+                }
             });
         })
     </script>

@@ -22,7 +22,6 @@ class CreateMessagesTable extends Migration
             $table->text('message');
             $table->tinyInteger('status')->default(0);
             $table->tinyInteger('label')->default(3);
-            $table->softDeletes();
             $table->timestamps();
         });
     }

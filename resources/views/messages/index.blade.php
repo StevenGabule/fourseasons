@@ -49,14 +49,6 @@
             font-size: 11px;
         }
 
-        .av-success {
-            background-color: #1dc9b7
-        }
-
-        .av-danger {
-            background-color: #FD397A
-        }
-
         .alert {
             padding: 0.75rem 1.25rem 0.15rem 1.25rem !important;
         }
@@ -73,16 +65,26 @@
             color: #FFB822 !important;
         }
 
+        .BtnInbox_ .fas.fa-inbox,
+        .BtnImportant_ .fas.fa-star,
+        .BtnDraft_ .fas.fa-file,
+        .BtnPromotions_ .fas.fa-ad,
+        .BtnSocial_ .fas.fa-share-alt,
+        .BtnMark_ .far.fa-bookmark,
+        .BtnTrash .fas.fa-trash {
+            color: #595d6e !important;
+        }
+
         thead {
             visibility: hidden;
-            /*display: none;*/
+            display: none;
         }
 
         tbody tr td:nth-child(2), tbody tr td:nth-child(3) {
             font-weight: bold;
         }
 
-    /*    toast toast-success*/
+        /*    toast toast-success*/
     </style>
     <link rel="stylesheet" href="{{ asset('css/toastr.min.css') }}">
 @endpush
@@ -94,26 +96,33 @@
 
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb small">
-                    <li class="breadcrumb-item"><a href="{{ route('booking.index') }}">Cleaners</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('messages.index') }}">Messages</a></li>
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
+
                 <div class="row">
+
                     <div class="col-2">
-                        <a href="javascript:void(0)" id="CleanersAdd"
+
+                        <a href="javascript:void(0)" id="BtnCompose"
                            class="btn btn-danger text-white btn-block btn-sm shadow-sm font-color font-weight-bold p-2 mb-3">Compose</a>
+
                         <div class="list-group small">
+
                             <div class="list-group-item font-weight-bold">
                                 Folders
                             </div>
+
                             <a href="javascript:void(0)" class="list-group-item list-group-item-action" id="BtnInbox"><i
                                     class="fas fa-inbox mr-3"></i>
                                 Inbox</a>
+
                             <a href="javascript:void(0)" id="BtnSent" class="list-group-item list-group-item-action"><i
                                     class="far fa-paper-plane mr-3"></i> Sent</a>
+
                             <a href="javascript:void(0)" id="BtnDraft" class="list-group-item list-group-item-action"><i
                                     class="far fa-file-alt mr-3"></i> Draft</a>
-                            <a href="javascript:void(0)" id="BtnTrash" class="list-group-item list-group-item-action"><i
-                                    class="far fa-trash-alt mr-3"></i> Trash</a>
+
                         </div>
                         <br>
                         <div class="list-group small">
@@ -131,6 +140,7 @@
                                     class="fas fa-circle-notch mr-3 social"></i> Social</a>
                         </div>
                     </div>
+
                     <div class="col-10">
                         <!-- DataTables for booking information-->
                         <div class="card mb-3 border-0 shadow">
@@ -140,7 +150,8 @@
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive">
-                                    <table class="table table-sm table-striped small" id="DataTableMessages">
+                                    <table class="table table-sm table-striped small" id="DataTableMessages"
+                                           width="100%">
                                         <thead>
                                         <tr>
                                             <th></th>
@@ -193,12 +204,13 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <div>
-                                <button type="button" name="submit" id="BtnDraft" class="btn btn-sm btn-dark"><i
+                                <button type="button" name="submit" id="BtnDraft__" class="btn btn-sm btn-dark"><i
                                         class="far fa-file-alt"></i> Draft
                                 </button>
                             </div>
                             <div>
-                                <button type="submit" name="submit" id="BtnAction" class="btn btn-sm btn-info">Send</button>
+                                <button type="submit" name="submit" id="BtnAction" class="btn btn-sm btn-info">Send
+                                </button>
                                 <button type="button" class="btn btn-link btn-sm" data-dismiss="modal">Discard</button>
                             </div>
                         </div>
@@ -223,8 +235,32 @@
                     <p>Are you sure to remove?</p>
                 </div>
                 <div class="modal-footer">
+                    <input type="hidden" id="MessageID" value="0" name="ID">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                    <button type="button" id="deletingMessage_" class="btn btn-danger btn-sm">Delete Cleaners</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ShowMessageModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><b>From:</b> <span id="email_"></span></p>
+                    <p><b>Name:</b> <span id="name_"></span></p>
+                    <p><b>Subject:</b> <span id="subject_"></span></p>
+                    <p id="message_"></p>
+                    <br>
+                    <p>Date sent: <span id="date_"></span></p>
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                    <button type="button" id="deletingCleaners_" class="btn btn-danger btn-sm">Delete Cleaners</button>
+                    <button type="button" class="btn btn-primary BtnReply btn-sm pull-right">Reply</button>
                 </div>
             </div>
         </div>
@@ -257,75 +293,39 @@
             "hideMethod": "fadeOut"
         };
 
-        $(document).on('click', '#CleanersAdd', function () {
-            $('#message_form')[0].reset();
-            $('.modal-title').text("Compose New Message");
-            $('#button_action').val("Send");
-            $("#SendingMessageModal").modal('show');
-        });
-
-        /* let CleanerID;
-         $(document).on('click', '.CleanersDeleting', function () {
-             CleanerID = $(this).attr('id');
-             $('#deletingCleaners_').text('Delete');
-             $("#CleanersDeletingModal").modal('show');
-         });
-
-         $(document).on('click', '.availableClass, .unavailableClass', function () {
-             let id = $(this).attr('id');
-             let status = $(this).attr('title');
-             $.ajax({
-                 url: "/cleaners/availability/" + id + "/status/" + status,
-                 beforeSend: function () {
-                     toastr.info('Request processing...');
-                 },
-                 success: function () {
-                     $('#DataTableCleaners').DataTable().ajax.reload();
-                 }
-             })
-         });
-
-         $(document).on('click', '#deletingCleaners_', function () {
-             $.ajax({
-                 url: "/cleaners/deleting/" + CleanerID,
-                 beforeSend: function () {
-                     $('#deletingCleaners_').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Deleting...');
-                 },
-                 success: function (data) {
-                     $('#CleanersDeletingModal').modal('hide');
-                     $('#DataTableCleaners').DataTable().ajax.reload();
-                 }
-             });
-         });*/
-
-        /*$(document).on('click', '.CleanersShow', function () {
-            let CleanersID = $(this).attr('id');
+        $(document).on('click', '.BtnOpen_', function (e) {
+            let id_ = $(this).attr('id');
             $.ajax({
-                url: "/cleaners/" + CleanersID + "/edit",
+                url: "/message/show/" + id_,
                 dataType: "json",
                 success: function (html) {
-                    $('#company').val(html.data.company);
-                    $('#owner').val(html.data.owner);
-                    $('#email').val(html.data.email);
-                    $('#members').val(html.data.members);
-                    $('#specialty').val(html.data.specialty);
-                    $('#PhoneNumber').val(html.data.phoneNumber);
-                    $('#location').val(html.data.location);
-                    $('#status').val(html.data.status);
-                    $('#hidden_id').val(html.data.id);
-                    $('.modal-title').text("Edit Cleaners");
-                    $('#action').val("Update");
-                    $('#button_action').val("Update");
-                    $("#CleanersModal").modal('show');
+                    $('#email_').text(html.data.email);
+                    $('#name_').text(html.data.name);
+                    $('#subject_').text(html.data.subject);
+                    $('#message_').text(html.data.message);
+                    $('#date_').text(moment(html.data.created_at).format('LL') +  ' - ' + moment(html.data.created_at).fromNow());
+                    $("#ShowMessageModal").modal('show');
                 },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status);
-                    alert(thrownError);
+                error: function (e) {
+                    alert(e.message);
                 }
             });
         });
-*/
 
+        $(document).on('click', '.BtnReply', function(e) {
+            e.preventDefault();
+            let email_ = $("#email_").text();
+            let subject_ = $("#subject_").text();
+
+            $("#ShowMessageModal").modal('hide');
+            $('.modal-title').text("Reply a Message");
+            $("#to").val(email_);
+            $("#subject").val(subject_);
+            $('#button_action').val("Send");
+            $('#BtnAction').text("Send");
+            $("#SendingMessageModal").modal('show');
+
+        });
 
         $(document).ready(function () {
 
@@ -362,6 +362,33 @@
                 getMessageLabel(value_);
             });
 
+            $(document).on('click', '#BtnDraft__', function (e) {
+                e.preventDefault();
+                let to_ = $('#to').val();
+                let subject_ = $('#subject').val();
+                let message_ = $('#message').val() ? $('#message').val() :  'No text';
+
+                $.ajax({
+                    url: "/messages/draft/" + to_ + '/' + subject_ + '/' + message_,
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    dataType: "json",
+                    beforeSend: function () {
+                        $('#BtnDraft__').html('<span class="spinner-border spinner-border-sm disabled" role="status" aria-hidden="true"></span> Drafting...');
+                    },
+                    success: function (data) {
+                        $('#message_form')[0].reset();
+                        $('#DataTableMessages').DataTable().ajax.reload();
+                        $('#SendingMessageModal').modal('hide');
+                        $('#BtnDraft__').html('<i class="far fa-file-alt"></i> Draft')
+                    },
+                    error: function (e) {
+                        alert(e.message)
+                    }
+                });
+            });
+
             $(document).on('click', '#BtnPromotions', function () {
                 value_ = 1;
                 getMessageLabel(value_);
@@ -372,19 +399,98 @@
                 getMessageLabel(value_);
             });
 
-            $(document).on('click', '.BtnTrash', function() {
+            let label_ = 0;
+
+            $(document).on('click', '.BtnDraft_, .BtnInbox_', function () {
                 let id_ = $(this).attr('id');
+                let title_ = $(this).attr('title');
+                let status_;
+                if (title_ === 'inbox') {
+                    status_ = 0;
+                }
+                if (title_ === 'draft') {
+                    status_ = 2;
+                }
                 $.ajax({
-                    url: "/messages/deleting/" + id_,
+                    url: "/messages/status_/" + id_ + '/' + status_,
                     beforeSend: function () {
-                        toastr.success('Move to trash');
+                        toastr.info('Request processing...');
                     },
                     success: function (data) {
+                        toastr.success('Request success');
+                        messageID_ = 0;
+                        if (status_ === 2) {
+                            status = 2;
+                            getMessage(status);
+                        } else {
+                            status = 0;
+                            getMessage(status);
+                        }
+
+                    }
+                });
+            });
+
+
+            $(document).on('click', '.BtnImportant_, .BtnPromotions_, .BtnSocial_', function () {
+                let id_ = $(this).attr('id');
+                let title_ = $(this).attr('title');
+
+                if (title_ === 'important') {
+                    label_ = 0;
+                }
+
+                if (title_ === 'promotions') {
+                    label_ = 1;
+                }
+
+                if (title_ === 'social') {
+                    label_ = 2;
+                }
+
+                $.ajax({
+                    url: "/messages/label_/" + label_ + '/' + id_,
+                    beforeSend: function () {
+                        toastr.info('Done Mark as ' + title_);
+                    },
+                    success: function (data) {
+                        messageID_ = 0;
                         getMessage();
                     }
                 });
             });
 
+            $(document).on('click', '#BtnCompose', function () {
+                $('#message_form')[0].reset();
+                $('.modal-title').text("Compose New Message");
+                $('#button_action').val("Send");
+                $('#BtnDraft__').val("Draft");
+                $("#SendingMessageModal").modal('show');
+            });
+
+            let messageID_ = 0;
+
+            $(document).on('click', '.BtnTrash', function () {
+                messageID_ = $(this).attr('id');
+                $('#MessageID').val(messageID_);
+                $('#deletingMessage_').text('Delete');
+                $("#MessageDeletingModal").modal('show');
+            });
+
+            $(document).on('click', '#deletingMessage_', function () {
+                $.ajax({
+                    url: "/messages/deleting/" + messageID_,
+                    beforeSend: function () {
+                        $('#deletingMessage_').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Deleting...');
+                    },
+                    success: function (data) {
+                        messageID_ = 0;
+                        getMessage(status);
+                        $("#MessageDeletingModal").modal('hide');
+
+                    }
+                });
+            });
 
             function getMessage(status) {
                 $('#DataTableMessages').DataTable({
@@ -392,12 +498,10 @@
                     processing: true,
                     serverSide: true,
                     ajax: "/messages/all/" + status,
-                    columnDefs: [
-                        {
-                            targets: [0],
-                            searchable: false
-                        }
-                    ],
+                    columnDefs: [{
+                        targets: [0],
+                        searchable: false
+                    }],
                     columns: [
                         {
                             data: {
@@ -504,7 +608,6 @@
 
             $('#message_form').on('submit', function (e) {
                 e.preventDefault();
-
                 $.ajax({
                     url: "{{ route('messages.store') }}",
                     method: "POST",
@@ -538,44 +641,6 @@
                         alert(e.message)
                     }
                 });
-                /*if (action_ === "Done") {
-                    $.ajax({
-                        url: "",
-                        method: "POST",
-                        data: new FormData(this),
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        dataType: "json",
-
-                        success: function (data) {
-                            let html = '';
-                            if (data.errors) {
-                                html = '<div class="alert alert-danger small">';
-                                for (let count = 0; count < data.errors.length; count++) {
-                                    html += '<p>' + data.errors[count] + '</p>';
-                                }
-
-                                html += '</div>';
-                                $('#form_output').html(html);
-                            }
-
-                            if (data.success) {
-                                $('#cleaners_form')[0].reset();
-                                $('#DataTableCleaners').DataTable().ajax.reload();
-                                $('#CleanersModal').modal('hide');
-                            }
-
-                        },
-                        error: function (e) {
-                            alert(e.message)
-                        }
-                    });
-                }
-
-                if (action_ === "Update") {
-
-                }*/
             });
         });
     </script>

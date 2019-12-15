@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Cleaners;
 use App\Mail\SendingEmailToCustomers;
 use App\Message;
 use Carbon\Carbon;
@@ -54,14 +53,14 @@ class MessagesController extends Controller
                           </a>
 
                           <div class="dropdown-menu" style="font-size: 11px;width: 50px;" aria-labelledby="dropdownMenuLink">
-                            <h6 class="dropdown-header font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
-                            <a class="dropdown-item font-weight-bold ml-2 BtnRead" id="$data->id" href="javascript:void(0)"><i class="fas fa-hourglass-half"></i> Read</a>
-                            <a class="dropdown-item font-weight-bold ml-2 BtnSpam" id="$data->id" href="javascript:void(0)"><i class="fas fa-check"></i> Spam</a>
-                            <a class="dropdown-item font-weight-bold ml-2 BtnDraft_" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Draft</a>
-                            <a class="dropdown-item font-weight-bold ml-2 BtnImportant_" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Important</a>
-                            <a class="dropdown-item font-weight-bold ml-2 BtnPromotions_" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Promotions</a>
-                            <a class="dropdown-item font-weight-bold ml-2 BtnSocial_" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Social</a>
-                            <a class="dropdown-item font-weight-bold BtnTrash" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Trash</a>
+                            <a class="dropdown-item font-weight-bold BtnOpen_" title="inbox" id="$data->id" href="javascript:void(0)"><i class="fas fa-eye mr-2"></i>Open Mail</a>
+                            <h6 class="dropdown-header BtnMark_ font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnInbox_" title="inbox" id="$data->id" href="javascript:void(0)"><i class="fas fa-inbox mr-2"></i>Inbox</a>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnDraft_" title="draft" id="$data->id" href="javascript:void(0)"><i class="fas fa-file mr-2"></i> Draft</a>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnImportant_" title="important" id="$data->id" href="javascript:void(0)"><i class="fas fa-star mr-2"></i>Important</a>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnPromotions_" title="promotions" id="$data->id" href="javascript:void(0)"><i class="fas fa-ad mr-2"></i>Promotions</a>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnSocial_" title="social" id="$data->id" href="javascript:void(0)"><i class="fas fa-share-alt mr-2"></i> Social</a>
+                            <a class="dropdown-item font-weight-bold BtnTrash" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash mr-2"></i> Delete</a>
                           </div>
                         </div>
 EOT;
@@ -84,15 +83,12 @@ EOT;
                           </a>
 
                           <div class="dropdown-menu" style="font-size: 11px;width: 50px;" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item font-weight-bold" href="/booking/$data->id"><i class="fas fa-calendar-week"></i> Show Details</a>
                             <h6 class="dropdown-header font-weight-bold" style="font-size: 11px;"><i class="far fa-bookmark"></i> Mark as </h6>
-                            <a class="dropdown-item font-weight-bold ml-2 completed_progress" id="$data->id" href="javascript:void(0)"><i class="fas fa-hourglass-half"></i> Pending</a>
-                            <a class="dropdown-item font-weight-bold ml-2 booking_completed" id="$data->id" href="javascript:void(0)"><i class="fas fa-check"></i> Completed</a>
-                            <a class="dropdown-item font-weight-bold ml-2 booking_cancel" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Cancel</a>
-                            <a class="dropdown-item font-weight-bold ml-2 booking_fraud" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Fraud</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item font-weight-bold bookingEditing" href="/booking/edit/$data->id"><i class="fas fa-user-edit"></i> Edit Booking</a>
-                            <a class="dropdown-item font-weight-bold bookingDeleting" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Delete Booking</a>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnDraft_" title="draft" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Draft</a>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnImportant_" title="important" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Important</a>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnPromotions_" title="promotions" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Promotions</a>
+                            <a class="dropdown-item font-weight-bold ml-2 BtnSocial_" title="social" id="$data->id" href="javascript:void(0)"><i class="fas fa-user-ninja"></i> Social</a>
+                            <a class="dropdown-item font-weight-bold BtnTrash" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Delete</a>
                           </div>
                         </div>
 EOT;
@@ -146,15 +142,12 @@ EOT;
         return response()->json(['success' => 'success']);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Message $message
-     * @return Response
-     */
-    public function show(Message $message)
+    public function show($id)
     {
-        //
+        if (request()->ajax()) {
+            $message = Message::findOrFail($id);
+            return response()->json(['data' => $message]);
+        }
     }
 
     /**
@@ -188,8 +181,38 @@ EOT;
      */
     public function destroy($id)
     {
-        $message = Message::find($id);
+        $message = Message::findOrFail($id);
         $message->delete();
         return response()->json(['success' => 'Successfully deleted']);
     }
+
+    public function ChangeLabel($val, $id)
+    {
+        $message = Message::find($id)->update(['label' => $val]);
+        $message->update();
+        return response()->json(['success' => 'Successfully updated']);
+    }
+
+    public function ChangeToMove($id, $val)
+    {
+        Message::find($id)->update(['status' => $val]);
+        return response()->json(['success' => 'Successfully updated']);
+    }
+
+    public function SaveMessageDraft($to, $subject, $message)
+    {
+        $message_ = new Message([
+            'to' => $to,
+            'subject' => $subject,
+            'message' => $message,
+            'email' => Auth::user()->email,
+            'name' => Auth::user()->name,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'status' => 2,
+        ]);
+        $message_->save();
+        return response()->json(['success' => 'success drafting the message']);
+    }
+
 }

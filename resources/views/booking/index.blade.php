@@ -48,18 +48,18 @@
             <div class="container-fluid">
 
                 <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
+                <ol class="breadcrumb small">
                     <li class="breadcrumb-item"><a href="{{ route('booking.index') }}">Bookings</a></li>
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
 
-                <div class="text-right mb-3">
+                <div class="text-right mb-3 small">
                     <a href="/" class="btn btn-sm btn-light shadow-sm"><i class="fas fa-user-plus mr-2"></i> Add Booking</a>
                 </div>
 
                 <!-- DataTables for booking information-->
                 <div class="card mb-3 rounded-0">
-                    <div class="card-header">
+                    <div class="card-header small">
                         <i class="fas fa-table"></i>
                         Booking Data Table
                     </div>
@@ -84,7 +84,7 @@
 
                 <!-- DataTables for completed booking information-->
                 <div class="card mb-3 rounded-0">
-                    <div class="card-header">
+                    <div class="card-header small">
                         <i class="fas fa-table"></i>
                          Completed Booking Data Table
                     </div>
@@ -109,7 +109,7 @@
                 </div><!-- end of card -->
                 <!-- start of card for cancelled -->
                 <div class="card mb-3 rounded-0">
-                    <div class="card-header">
+                    <div class="card-header small">
                         <i class="fas fa-table"></i>
                         Cancelled Booking Data Table
                     </div>
@@ -134,7 +134,7 @@
                 </div>
                 <!-- start of card for cancelled -->
                 <div class="card mb-3 rounded-0">
-                    <div class="card-header">
+                    <div class="card-header small">
                         <i class="fas fa-table"></i>
                         Fraud Booking Data Table
                     </div>

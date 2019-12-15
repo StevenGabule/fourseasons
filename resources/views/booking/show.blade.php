@@ -14,13 +14,13 @@
             <div class="container-fluid">
 
                 <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
+                <ol class="breadcrumb small">
                     <li class="breadcrumb-item"><a href="{{ route('booking.index') }}">Bookings</a></li>
                     <li class="breadcrumb-item active">Invoice Overview</li>
                 </ol>
 
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header small">
                         <div class="d-flex justify-content-between">
                             <p class="m-0 p-0">Booking Information <span class="badge badge-primary">{{ $status[$booking->status] }}</span></p>
                             <p class="m-0 p-0">Date created: {{ $booking->created_at->toFormattedDateString() }}</p>

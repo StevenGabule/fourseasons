@@ -14,7 +14,7 @@
 
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('booking.index') }}">Customers</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Customers</a></li>
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
 

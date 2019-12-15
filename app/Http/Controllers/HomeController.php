@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Booking;
+use App\Customer;
+use App\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $bookings = Booking::all()->count();
+        $customers = Customer::all()->count();
+        $messages = Message::all()->count();
+        return view('admin.index', compact('bookings', 'customers', 'messages'));
+    }
+
+    public function logout()
+    {
+        Auth::logout();
     }
 }

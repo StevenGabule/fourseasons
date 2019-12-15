@@ -45,7 +45,16 @@ Route::get('/cleaners/deleting/{id}', 'CleanersController@destroy')->name('clean
 Route::get('/cleaners/availability/{id}/status/{status}', 'CleanersController@ChangeStatus')->name('cleaners.availability');
 
 Route::get('/messages', 'MessagesController@index')->name('messages.index');
+Route::get('/message/show/{id}', 'MessagesController@show')->name('messages.show');
 Route::get('/messages/all/{status}', 'MessagesController@GetAllMessages')->name('messages.all');
 Route::get('/messages/label/{label}', 'MessagesController@GetAllMessageLabel')->name('messages.label.all');
 Route::post('/messages/store', 'MessagesController@store')->name('messages.store');
 Route::get('/messages/deleting/{id}', 'MessagesController@destroy')->name('messages.destroy');
+Route::get('/messages/label_/{label}/{id}', 'MessagesController@ChangeLabel')->name('messages.label.modify');
+
+Route::get('/messages/status_/{id}/{status}', 'MessagesController@ChangeToMove')->name('messages.to.status');
+
+Route::get('/messages/draft/{to}/{subject}/{message}', 'MessagesController@SaveMessageDraft')->name('messages.draft');
+
+
+Route::get('user/logout', 'HomeController@logout')->name('user.logout');

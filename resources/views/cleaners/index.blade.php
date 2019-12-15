@@ -71,7 +71,7 @@
 
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb small">
-                    <li class="breadcrumb-item"><a href="{{ route('booking.index') }}">Cleaners</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('cleaners.all') }}">Cleaners</a></li>
                     <li class="breadcrumb-item active">Overview</li>
                 </ol>
                 <div class="text-right mb-3">

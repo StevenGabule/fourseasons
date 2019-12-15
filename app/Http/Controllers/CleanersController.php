@@ -40,7 +40,7 @@ class CleanersController extends Controller
                             <a class="dropdown-item font-weight-bold ml-2 availableClass" title="available" id="$data->id" href="javascript:void(0)"><i class="fas fa-check"></i> Available</a>
                             <a class="dropdown-item font-weight-bold ml-2 unavailableClass" title="unavailable" id="$data->id" href="javascript:void(0)"><i class="fas fa-ban"></i> Unavailable</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item font-weight-bold CleanersShow" href="/booking/edit/$data->id"><i class="fas fa-user-edit"></i> Edit Cleaners</a>
+                            <a class="dropdown-item font-weight-bold CleanersShow" href="javascript:void(0)" id="$data->id"><i class="fas fa-user-edit"></i> Edit Cleaners</a>
                             <a class="dropdown-item font-weight-bold CleanersDeleting" id="$data->id" href="javascript:void(0)"><i class="fas fa-trash"></i> Delete Cleaners</a>
                           </div>
                         </div>
