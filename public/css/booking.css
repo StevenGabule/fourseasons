@@ -1,0 +1,186 @@
+
+.btn-prim {
+    color: #ffffff;
+    background-color: #242C62;
+}
+
+.btn-prim:hover, .btn-prim:active {
+    color: #ffffff;
+    background-color: #1b224b;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.navbar {
+    padding: 0 !important;
+}
+
+.navbar .fourSeason_icon {
+    width: 80px;
+    height: auto;
+}
+
+.navbar .nav-item a {
+    font-weight: bold;
+    color: #616161 !important;
+}
+
+.navbar .nav-item:hover a, .navbar .nav-item:active a,
+.navbar .nav-item .active a {
+    color: #1a1a1a !important;
+}
+
+footer {
+    background-color: #242C62;
+    color: #ffffff;
+}
+
+footer .fourSeason_icon {
+    width: 120px;
+    height: auto;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer .contact_icon {
+    width: 20px;
+    height: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none !important;
+}
+
+.howWorks_image_section {
+    height: 100px;
+}
+
+.home_background1 {
+    background-image: url("../images/assets/home-image1.jpg");
+    /* The image used */
+    color: #ffffff;
+    background-color: #242C62;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home_background2 {
+    background-image: url("../images/assets/home-image2.jpg");
+    /* The image used */
+    color: #ffffff;
+    background-color: #242C62;
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    .home_background2 {
+        height: 500px;
+    }
+}
+
+.home_dot {
+    font-size: 0.5rem;
+}
+
+.btn_rounded {
+    border-radius: 30px;
+}
+
+.extra-header-container {
+    height: 100px;
+}
+
+.extra-header-container .extra-image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+}
+
+#web_extra_container div {
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+
+#web_extra_container div:hover .border, #web_extra_container div:active .border {
+    border-color: #242C62 !important;
+}
+
+.isSelected .extra-image-container {
+    background-color: #242C62 !important;
+    border-color: #242C62 !important;
+}
+
+.extra-input-cont {
+    display: none;
+    height: 100%;
+}
+
+.extra-img {
+    width: 50px;
+    height: auto;
+}
+
+.radio {
+    cursor: pointer;
+}
+
+.radioSelected {
+    color: #ffffff;
+    background-color: #242C62;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding-top: 10px;
+}
+
+.booking-css {
+    background-color: white;
+    color: #243774 !important;
+}
+
+.booking-css img {
+    width: 30px;
+    height: auto;
+}
+
+.booking-css hr {
+    background-color: #c8c8c8;
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+

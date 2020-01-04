@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/booking-customer', function () {
+    return view('booking');
+})->name('booking.customer');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -53,7 +58,6 @@ Route::get('/messages/deleting/{id}', 'MessagesController@destroy')->name('messa
 Route::get('/messages/label_/{label}/{id}', 'MessagesController@ChangeLabel')->name('messages.label.modify');
 
 Route::get('/messages/status_/{id}/{status}', 'MessagesController@ChangeToMove')->name('messages.to.status');
-
 Route::get('/messages/draft/{to}/{subject}/{message}', 'MessagesController@SaveMessageDraft')->name('messages.draft');
 
 
