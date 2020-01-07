@@ -1,24 +1,24 @@
-//function that handle array of bedroom changes
-function nmbrBedroomArray(servicetype) {
-    var regOption = {
-        1: '1 Bedroom (' + servicetype + ')',
-        2: '2 Bedroom (' + servicetype + ')',
-        3: '3 Bedroom (' + servicetype + ')',
-        4: '4 Bedroom (' + servicetype + ')',
-        5: '5 Bedroom (' + servicetype + ')',
-        6: '6 Bedroom (' + servicetype + ')'
-    };
-    return regOption;
-}
-
-//function that handle empying the choose bedroom dropdown and repopulating with updated list of options
+// function that handle emptying the choose bedroom dropdown and repopulating with updated list of options
 function replaceServiceBedroomCount(elemId, serviceType) {
     var elementID = '#' + elemId;
     $(elementID).empty();
-    $.each(nmbrBedroomArray(serviceType), function (val, text) {
+    $.each(CustomerService(serviceType), function (val, text) {
         $(elementID).append(new Option(text, val));
     });
 }
+
+//function that handle array of bedroom changes
+function CustomerService(serviceType) {
+    return {
+        1: '1 Bedroom (' + serviceType + ')',
+        2: '2 Bedrooms (' + serviceType + ')',
+        3: '3 Bedrooms (' + serviceType + ')',
+        4: '4 Bedrooms (' + serviceType + ')',
+        5: '5 Bedrooms (' + serviceType + ')',
+        6: '6 Bedrooms (' + serviceType + ')'
+    };
+}
+
 
 //function that add class is selected and check if it is not zero
 function addIsSelected(elemId, value) {
@@ -123,10 +123,89 @@ $(document).ready(function () {
     var exBedBtnMinus = $('#extra_bed_btn_minus');
     var exBedCounter = $('#usr_extra_bed_counter');
 
+    exWalls.on('click', function() {
+        var _check = $("#extra_clean_walls");
+        if (_check.is(':checked')) {
+            _check.attr('checked', false);
+        }  else {
+            _check.attr('checked','checked');
+        }
+    });
+
+    exLaundry.on('click', function() {
+        var _check = $("#extra_laundry");
+        if (_check.is(':checked')) {
+            _check.attr('checked', false);
+        }  else {
+            _check.attr('checked','checked');
+        }
+    });
+
+    exOven.on('click', function() {
+        var _check = $("#extra_clean_oven");
+        if (_check.is(':checked')) {
+            _check.attr('checked', false);
+        }  else {
+            _check.attr('checked','checked');
+        }
+    });
+
+    exFridge.on('click', function() {
+        var _check = $("#extra_inside_fridge");
+        if (_check.is(':checked')) {
+            _check.attr('checked', false);
+        }  else {
+            _check.attr('checked','checked');
+        }
+    });
+
+    exIroning.on('click', function() {
+        var _check = $("#extra_ironing");
+        if (_check.is(':checked')) {
+            _check.attr('checked', false);
+        }  else {
+            _check.attr('checked','checked');
+        }
+    });
+    exPets.on('click', function() {
+        var _check = $("#extra_animal");
+        if (_check.is(':checked')) {
+            _check.attr('checked', false);
+        }  else {
+            _check.attr('checked','checked');
+        }
+    });
+
+    exVac.on('click', function() {
+        var _check = $("#extra_map");
+        if (_check.is(':checked')) {
+            _check.attr('checked', false);
+        }  else {
+            _check.attr('checked','checked');
+        }
+    });
+
+    var serviceTypeValue = 1;
+    $("#usr_number_of_bedroom").on('change', function() {
+       $('#bedroom_request').text($(this).val());
+        if ($(this).val() > 1) {
+            if (serviceTypeValue === 1)
+                $("#booking_summary_bedroom").text('Bedrooms (Regular)');
+            if (serviceTypeValue === 2)
+                $("#booking_summary_bedroom").text('Bedrooms (Deep Clean)');
+            if (serviceTypeValue === 3)
+                $("#booking_summary_bedroom").text('Bedrooms (End of Tenancy)');
+        }
+    });
+
+    $("#datepicker").on('mouseleave, mouseenter', function() {
+        $("#booking_summary_date").text($(this).val() !== '' ? $(this).val() : 'Choose service date...')
+    });
+
     // change based on service type
     $('#usr_choosen_service_type').on('change', function () {
-        var serviceTypeValue = $(this).val();
-        if (serviceTypeValue == 'regular') {
+        serviceTypeValue = $(this).val();
+        if (parseInt(serviceTypeValue) === 1) {
             // to show all extra html element
             exCabinet.show();
             exWindows.show();
@@ -142,25 +221,22 @@ $(document).ready(function () {
             //change choose services string based on service type
             replaceServiceBedroomCount('usr_number_of_bedroom', 'Regular');
 
-        } else if (serviceTypeValue == 'deepclean') {
-            exCabinet.show();
+            $("#booking_summary_bedroom").text('Bedroom (Regular)');
+            $('#bedroom_request').text(1);
 
+        } else if (parseInt(serviceTypeValue) === 2) {
+            exCabinet.show();
             exWindows.hide().removeClass('isSelected');
             resetInputValues(exCabInput, exCabCounter);
-
             exWalls.hide().removeClass('isSelected');
-
             exLaundry.show();
-
             exOven.hide().removeClass('isSelected');
-
             exFridge.hide().removeClass('isSelected');
-
             exIroning.hide().removeClass('isSelected');
-
             //change choose services string based on service type
             replaceServiceBedroomCount('usr_number_of_bedroom', 'Deep Clean');
-
+            $("#booking_summary_bedroom").text('Bedroom (Deep Clean)');
+            $('#bedroom_request').text(1);
 
         } else {
             exCabinet.hide().removeClass('isSelected');
@@ -168,19 +244,16 @@ $(document).ready(function () {
 
             exWindows.hide().removeClass('isSelected');
             resetInputValues(exWinInput, exWinCounter);
-
             exWalls.hide().removeClass('isSelected');
-
             exLaundry.hide().removeClass('isSelected');
-
             exOven.hide().removeClass('isSelected');
-
             exFridge.hide().removeClass('isSelected');
-
             exIroning.hide().removeClass('isSelected');
-
             //change choose services string based on service type
             replaceServiceBedroomCount('usr_number_of_bedroom', 'End of Tenancy');
+            $("#booking_summary_bedroom").text('Bedroom (End of Tenancy)');
+            $('#bedroom_request').text(1);
+
         }
     });
 
@@ -190,7 +263,6 @@ $(document).ready(function () {
         exInputCont.hide();
         $(this).find(exImageCont).hide();
         $(this).find(exInputCont).show()
-
     });
 
     //so that show and hide input when clicking outside
@@ -200,12 +272,14 @@ $(document).ready(function () {
             $(this).find(exInputCont).hide();
         }
     });
-    //Gi tinanmban nalang
+
+
     //Cabinet Input add And minus section
     exCabBtnPlus.on('click', function () {
         //the excabcounter is for the tittle changing event
         extraAdd(exCabInput, exCabCounter, exCabinet);
     });
+
     exCabBtnMinus.on('click', function () {
         //the excabcounter is for the tittle changing event
         extraMinus(exCabInput, exCabCounter, exCabinet);

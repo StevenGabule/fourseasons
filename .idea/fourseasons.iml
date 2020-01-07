@@ -96,5 +96,6 @@
     <orderEntry type="library" name="tooltip" level="application" />
     <orderEntry type="library" name="main" level="application" />
     <orderEntry type="library" name="jquery-3.4.1.slim" level="application" />
+    <orderEntry type="library" name="gijgo" level="application" />
   </component>
 </module>

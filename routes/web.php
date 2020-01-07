@@ -19,7 +19,6 @@ Route::get('/booking-customer', function () {
     return view('booking');
 })->name('booking.customer');
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -62,3 +61,5 @@ Route::get('/messages/draft/{to}/{subject}/{message}', 'MessagesController@SaveM
 
 
 Route::get('user/logout', 'HomeController@logout')->name('user.logout');
+
+Route::post('/customer-booking-submit', 'BookingsController@store')->name('customer.booking');

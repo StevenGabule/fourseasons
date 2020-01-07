@@ -89,6 +89,7 @@
             color: rgba(255, 255, 255, 0.7);
         }
     </style>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 @include('_shared._header')
@@ -99,7 +100,8 @@
         <h6>We don't share your personal information with everyone</h6>
     </div>
     <!-- form that i think that encapsulate the two column so that the submit button worked -->
-    <form action="">
+    <form action="{{ route('customer.booking') }}" method="post">
+        @csrf
         <!-- Container for the two column -->
         <div class="row">
             <!-- First column container -->
@@ -107,37 +109,37 @@
 
                 <!-- div container for Step 1 -->
                 <div class="mb-5">
-                    <h5 class="text-capitalize">Complete your booking</h5>
-                    <h6 class="mb-4">View your price below and just a few details and we can complete your booking
+                    <h5 class="text-capitalize">Follow the step to complete your booking information</h5>
+                    <h6 class="mb-4 text-muted">View your price below and just a few details and we can complete your booking
                         information</h6>
 
-                    <h5>STEP 1 : Your Basic Information</h5>
-                    <p>This information will be used to contact you about your service.</p>
+                    <h5>STEP 1 : WHO YOU ARE</h5>
+                    <p class="text-muted">This information will be used to contact you about your service.</p>
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="user_fullName">Enter fullname<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
-                                <input type="text" class="form-control" id="user_fullName">
+                                <input type="text" class="form-control" id="user_fullName" name="fullname">
                             </div>
                         </div><!-- end of fullname -->
 
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label for="user_email">Enter email<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
-                                <input type="email" class="form-control" id="user_email">
+                                <input type="email" class="form-control" id="user_email" name="email">
                             </div>
                         </div><!-- end of email -->
 
                         <div class="col-12 col-md-6">
                             <div class="form-group">
                                 <label for="user_phone">Enter phone number<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
-                                <input type="text" class="form-control" id="user_phone">
+                                <input type="text" class="form-control" id="user_phone" name="phone">
                             </div>
                         </div><!-- end of phone numbers -->
 
                         <div class="col-12 offset-md-6 col-md-6">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="usr_check_reminders">
+                                <input type="checkbox" class="form-check-input" id="usr_check_reminders" name="reminders">
                                 <label class="form-check-label" for="usr_check_reminders">Send me reminders about my
                                     booking via text message</label>
                             </div>
@@ -148,7 +150,7 @@
                 <!-- start of Step 2 -->
                 <div>
                     <h5>STEP 2: YOUR HOME</h5>
-                    <p>Where would you like us to clean?</p>
+                    <p class="text-muted">Where would you like us to clean?</p>
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
@@ -160,7 +162,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="user_accurate_house_address">Enter house/apartment no.<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
-                                <textarea rows="4" class="form-control" id="user_accurate_house_address"></textarea>
+                                <textarea rows="4" class="form-control" id="user_accurate_house_address" name="home_apartment_number"></textarea>
                             </div>
                         </div>
 
@@ -174,7 +176,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="user_postcode">Enter Postal code<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
-                                <input type="email" class="form-control" id="user_postcode">
+                                <input type="email" class="form-control" id="user_postcode" name="postcode">
                             </div>
                         </div>
                     </div>
@@ -183,7 +185,7 @@
                 <!-- start of Step 3 -->
                 <div class="mt-4">
                     <h5>STEP 3: CHOOSE SERVICE TYPE</h5>
-                    <p>What type of service would you like?</p>
+                    <p class="text-muted">What type of service would you like?</p>
 
                     <p><span class="font-weight-bold">Regular Clean: </span>This is our most popular clean and is more
                         of a maintenance clean where we focus on all reachable areas and surfaces of the home. We
@@ -199,22 +201,22 @@
                         your home is spotless. Your house must
                         be empty for this clean.</p>
                     <div class="form-group">
-                        <select class="form-control" id="usr_choosen_service_type">
-                            <option value="regular">Regular</option>
-                            <option value="deepclean">Deep Clean</option>
-                            <option value="tenancy">End of Tenancy</option>
+                        <select class="form-control" id="usr_choosen_service_type" name="service_type">
+                            <option value="1">Regular</option>
+                            <option value="2">Deep Clean</option>
+                            <option value="3">End of Tenancy</option>
                         </select>
                     </div>
                 </div>
                 <!-- div container for Step 4 -->
-                <div>
+                <div class="mt-5">
                     <h5>STEP 4: CHOOSE YOUR SERVICE</h5>
-                    <p>Tell us about your home. Please round up any half bedrooms or bathrooms. Included are your living
+                    <p class="text-muted">Tell us about your home. Please round up any half bedrooms or bathrooms. Included are your living
                         room, kitchen, hallways and other areas of the home.</p>
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <select class="form-control" id="usr_number_of_bedroom">
+                                <select class="form-control" id="usr_number_of_bedroom" name="bedroom">
                                     <option value="1">1 Bedroom (Regular)</option>
                                     <option value="2">2 Bedroom (Regular)</option>
                                     <option value="3">3 Bedroom (Regular)</option>
@@ -226,7 +228,7 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <select class="form-control" id="usr_number_of_bathroom">
+                                <select class="form-control" id="usr_number_of_bathroom" name="bathroom">
                                     <option value="1">1 Bathroom</option>
                                     <option value="2">2 Bathroom</option>
                                     <option value="3">3 Bathroom</option>
@@ -239,32 +241,39 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="mt-5">
                     <h5>STEP 5: SELECT EXTRA</h5>
-                    <p>Adds extra time</p>
+                    <p class="text-muted">Adds extra time</p>
                     <div id="web_extra_container" class="row text-center">
                         <div id="usr_extra_clean_cabinet" class="col-6 col-md-3 selection-input">
                             <div class="extra-header-container">
+
                                 <div class="border rounded extra-image-container">
                                     <img class="extra-img m-auto" src="{{ asset('images/assets/file-cabinet-1.png') }}"
                                          alt="extra-image-cabinet">
                                 </div>
+
                                 <div class="extra-input-cont">
                                     <div class="d-flex h-100">
                                         <div class="input-group my-auto">
+
                                             <input id="extra_cabinet_count" type="number" class="form-control"
-                                                   placeholder="Count" value="0" min="1" max="1000">
+                                                   placeholder="Count" value="0" min="1" max="30" name="cabinet">
+
                                             <div class="input-group-append">
                                                 <a id="extra_cabinet_btn_plus" class="btn" type="button">+</a>
                                                 <a id="extra_cabinet_btn_minus" class="btn" type="button">-</a>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <p class="px-1 pt-1">Clean inside cabinets (per cabinet)<span
                                     id="usr_extra_clean_cabinet_count"></span></p>
-                        </div>
+                        </div><!-- end of cabinet -->
+
                         <div id="usr_extra_clean_windows" class="col-6 col-md-3 selection-input">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
@@ -275,28 +284,33 @@
                                 <div class="extra-input-cont">
                                     <div class="d-flex h-100">
                                         <div class="input-group my-auto">
+
                                             <input id="extra_windows_count" type="number" class="form-control"
-                                                   placeholder="Count" value="0" min="1" max="1000">
+                                                   placeholder="Count" value="0" min="1" max="30" name="inside_windows">
+
                                             <div class="input-group-append">
                                                 <a id="extra_windows_btn_plus" class="btn" type="button">+</a>
                                                 <a id="extra_windows_btn_minus" class="btn" type="button">-</a>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Clean inside windows (per window)<span
                                     id="usr_extra_clean_windows_count"></span></p>
-                        </div>
+                        </div> <!-- end of inside windows -->
+
                         <div id="usr_extra_clean_walls" class="col-6 col-md-3 selection">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
-                                    <img class="extra-img m-auto" src="{{ asset('images/assets/wall.png') }}"
-                                         alt="extra-image-cabinet">
+                                    <img class="extra-img m-auto" src="{{ asset('images/assets/wall.png') }}" alt="extra-image-cabinet">
                                 </div>
                             </div>
                             <p class="px-1">Clean walls</p>
-                        </div>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="clean_walls" id="extra_clean_walls"> Clean walls</p>
+                        </div><!-- end of walls -->
+
                         <div id="usr_extra_batch_laundry" class="col-6 col-md-3 selection">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
@@ -305,7 +319,9 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">One batch of laundry</p>
-                        </div>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_laundry" id="extra_laundry"> Clean walls</p>
+                        </div><!-- end of laundry -->
+
                         <div id="usr_extra_clean_inside_oven" class="col-6 col-md-3 selection">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
@@ -314,7 +330,10 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Clean inside the oven</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_clean_oven" id="extra_clean_oven"> Clean oven</p>
+
                         </div>
+
                         <div id="usr_extra_clean_fridge" class="col-6 col-md-3 selection">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
@@ -324,7 +343,10 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Clean inside the Fridge</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_inside_fridge" id="extra_inside_fridge"> Clean inside the Fridge</p>
+
                         </div>
+
                         <div id="usr_extra_1hr_ironing" class="col-6 col-md-3 selection">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
@@ -333,7 +355,9 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">One full hour of ironing</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_ironing" id="extra_ironing"> hour of ironing</p>
                         </div>
+
                         <div id="usr_extra_pets" class="col-6 col-md-3 selection">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
@@ -342,7 +366,9 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Home with Pets</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_animal" id="extra_animal"> Home with Pets</p>
                         </div>
+
                         <div id="usr_extra_vac_mop_bucket" class="col-6 col-md-3 selection">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
@@ -351,7 +377,9 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Provide Vacuum, Mop and Bucket</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_map" id="extra_map"> Provide Vacuum, Mop and Bucket</p>
                         </div>
+
                         <div id="usr_extra_bed_change" class="col-6 col-md-3 selection-input">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
@@ -361,8 +389,10 @@
                                 <div class="extra-input-cont">
                                     <div class="d-flex h-100">
                                         <div class="input-group my-auto">
+
                                             <input id="extra_bed_count" type="number" class="form-control"
-                                                   placeholder="Count" value="0" min="1" max="1000">
+                                                   placeholder="Count" value="0" min="1" max="30" name="extra_bed_changing">
+
                                             <div class="input-group-append">
                                                 <a id="extra_bed_btn_plus" class="btn" type="button">+</a>
                                                 <a id="extra_bed_btn_minus" class="btn" type="button">-</a>
@@ -375,24 +405,13 @@
                         </div>
                     </div>
                 </div>
-                <div>
+
+                <div class="mt-5">
                     <h5>Additional information</h5>
-                    <p>How did you hear about 4seasons?*</p>
-                    <div class="form-group ">
-                        <select class="form-control" id="usr_additional_info_about_4season">
-                            <option value=" "></option>
-                            <option value="google ">Google</option>
-                            <option value="social media ">Social Media</option>
-                            <option value="review sites ">Review Sites</option>
-                            <option value="word of mouth ">Word of Mouth</option>
-                            <option value="printed advertising ">Printed Advertising</option>
-                            <option value="other ">Other</option>
-                        </select>
-                    </div>
                     <p>How many floors is your home? *</p>
-                    <div class="form-group ">
-                        <select class="form-control " id="usr_additional_info_about_4season ">
-                            <option value=" "></option>
+                    <div class="form-group">
+                        <select class="form-control" id="usr_additional_info_about_4season">
+                            <option value="Select here" disabled></option>
                             <option value="single floor ">Single floor</option>
                             <option value="two floors ">Two floors</option>
                             <option value="more than two floor ">More Than 2 floors</option>
@@ -417,22 +436,31 @@
                 <!-- div that contain date picker and time for cleaning -->
                 <div>
                     <h5>When would you like us to come?</h5>
-                    <p>Choose both a date and a 2 hour window between which you would like us to come.</p>
+                     <p class="text-muted">Choose both a date and a 2 hour window between which you would like us to come.</p>
                     <div class="row">
                         <div class="col-12 col-md-6 mt-2">
-                            <input id="usr_date_selection" type="date" placeholder="Choose Date*" class="form-control">
+                            <input id="datepicker" type="text" placeholder="Choose Date*" class="form-control">
                         </div>
                         <div class="col-12 col-md-6 mt-2">
                             <select class="form-control" id="usr_hour_selection">
-                                <option value="">--:--</option>
+                                <option value="" disabled="">Select time arrival</option>
+                                <option value="8:00AM - 9:AM">8:00AM - 9:AM</option>
+                                <option value="9:00AM - 10:AM">9:00AM - 10:AM</option>
+                                <option value="10:00AM - 11:AM">10:00AM - 11:AM</option>
+                                <option value="11:00AM - 12:NN">11:00AM - 12:NN</option>
+                                <option value="12:00NN - 1:PM">12:00NN - 1:PM</option>
+                                <option value="1:00PM - 2:PM">1:00PM - 2:PM</option>
+                                <option value="2:00PM - 3:PM">2:00PM - 3:PM</option>
+                                <option value="3:00PM - 4:PM">3:00PM - 4:PM</option>
+                                <option value="4:00PM - 5:PM">4:00PM - 5:PM</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <div>
+                <div class="mt-5">
                     <h5>How often?</h5>
-                    <p>It's all about matching you with the perfect clean for your home. Scheduling is flexible. Cancel
+                    <p class="text-muted">It's all about matching you with the perfect clean for your home. Scheduling is flexible. Cancel
                         or reschedule anytime.</p>
                     <div class="row no-gutters text-center radio-group">
                         <div class="col-12 col-md-3 pr-0">
@@ -458,9 +486,9 @@
                     </div>
                 </div>
                 <!-- step 6 payment section div -->
-                <div>
+                <div class="mt-5">
                     <h5>STEP 6: SELECT PAYMENT</h5>
-                    <p>Enter your card information below.</p>
+                    <p class="text-muted">Enter your card information below.</p>
                     <div class="form-group">
                         <input type="email" class="form-control" id="usr_credit_number" placeholder="Credit Number">
                         <img class="py-3" src="{{ asset('images/assets/image.png') }}" alt="credit-image">
@@ -475,22 +503,27 @@
                         <h5 class="mt-3 text-center font-weight-bolder py-2">BOOKING SUMMARY</h5>
 
                         <div class="py-4 px-4 d-flex flex-column border-bottom mb-3 border-top small">
+
                             <p class="d-flex align-items-center">
                                 <i class="fas fa-2x fa-house-damage"></i>
-                                <span class="ml-2" style="" id="booking_summary_bedroom">1 Bedroom (Regular)</span>
+                                <span class="ml-2" id="bedroom_request">1</span>&nbsp;<span style="" id="booking_summary_bedroom"> Bedroom (Regular)</span>
                             </p>
+
                             <p class="d-flex align-items-center">
                                 <i class="far fa-2x fa-calendar"></i>
                                 <span class="ml-3" id="booking_summary_date">Choose service date...</span>
                             </p>
+
                             <p class="d-flex align-items-center">
                                 <i class="far fa-2x fa-clock"></i>
                                 <span class="ml-3" id="booking_summary_totalTime">3 Hours 0 Minutes</span>
                             </p>
+
                             <p class="d-flex align-items-center">
                                 <i class="fas fa-2x fa-redo"></i>
                                 <span class="ml-3" id="booking_summary_often">Biweekly</span>
                             </p>
+
                         </div>
 
                         <div class="px-4 d-flex justify-content-between small">
@@ -507,14 +540,12 @@
                             <h4>Total</h4>
                             <h4 id="booking_summary_subTotal">£46.00</h4>
                         </div>
-
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-lg-8">
-                <br>
-                <p>By clicking the Book Now button you are agreeing to our Terms of Service and Privacy Policy.</p>
+                <p class="text-muted">By clicking the Book Now button you are agreeing to our Terms of Service and Privacy Policy.</p>
                 <button type="submit" class="btn btn-prim py-3 w-100">BOOK NOW</button>
             </div>
         </div>
@@ -528,4 +559,13 @@
         $('[data-toggle="tooltip"]').tooltip()
     })
 </script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<script>
+    let today, datepicker;
+    today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
 
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap4',
+        minDate: today
+    });
+</script>

@@ -2,72 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73390a96-7aec-415b-802c-ee7d4345d7e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/booking.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/4season-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/Image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/bathroom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/bed-bedroom-blanket-clean-545012.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/bed-empty-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/bed-empty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/bed-king.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/bedroom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/bike-fast.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/briefcase-check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/briefcase.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/brown-wooden-center-table-584399.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/calendar-clock.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/calendar-multiple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/calendar-outline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/car-parking-lights.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/ceiling-light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/cellphone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/chair-school.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/charity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/check-bold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/clock-check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/dog.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/email-outline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/facebook (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/facebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/file-cabinet-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/file-cabinet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/home-finding-ico1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/home-finding-ico2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/home-finding-ico3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/home-finding-ico4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/home-image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/home-image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/kitchen.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/laptop-chromebook (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/laptop-chromebook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/living.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/phone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/shield-check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/spray-bottle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/stove.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/thumb-up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/twitter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/wall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/washing-machine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/assets/window-closed-variant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/hero/brown-wooden-center-table-584399.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/svg/fridge-svgrepo-com.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/svg/iron-svgrepo-com.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/svg/oven-svgrepo-com.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/svg/spray-svgrepo-com.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/svg/washing-machine-for-laundry-svgrepo-com.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/booking.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/_shared/_footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/_shared/_header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/booking.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/FeatureList.TODO" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/storage_v2/_src_/schema/fourseasons.Cu7WuQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/storage_v2/_src_/schema/fourseasons.Cu7WuQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/John_paul.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/John_paul.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/fourseasons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fourseasons.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/booking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/booking.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,7 +36,30 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="fourseasons@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="fourseasons@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="fourseasons@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="fourseasons: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="fourseasons@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="fourseasons: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileEditorManager">
@@ -101,17 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1992">
-              <caret line="83" column="24" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/_shared/_header.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+            <state relative-caret-position="234">
+              <caret line="501" column="26" lean-forward="true" selection-start-line="501" selection-start-column="26" selection-end-line="501" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -119,17 +76,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="185" column="58" selection-start-line="185" selection-start-column="54" selection-end-line="185" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/booking.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4056">
-              <caret line="169" column="1" selection-start-line="169" selection-start-column="1" selection-end-line="169" selection-end-column="1" />
+            <state relative-caret-position="574">
+              <caret line="310" column="74" selection-start-line="310" selection-start-column="74" selection-end-line="310" selection-end-column="74" />
+              <caret line="321" column="74" selection-start-line="321" selection-start-column="74" selection-end-line="321" selection-end-column="74" />
+              <caret line="332" column="74" selection-start-line="332" selection-start-column="74" selection-end-line="332" selection-end-column="74" />
+              <caret line="345" column="74" selection-start-line="345" selection-start-column="74" selection-end-line="345" selection-end-column="74" />
+              <caret line="357" column="74" selection-start-line="357" selection-start-column="74" selection-end-line="357" selection-end-column="74" />
+              <caret line="368" column="74" selection-start-line="368" selection-start-column="74" selection-end-line="368" selection-end-column="74" />
+              <caret line="379" column="74" selection-start-line="379" selection-start-column="74" selection-end-line="379" selection-end-column="74" />
+              <folding>
+                <element signature="n#style#0;n#p#1;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#3;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#4;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#6;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#7;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#8;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#28614#28620#1#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,8 +101,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/booking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+            <state relative-caret-position="480">
+              <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
+              <folding>
+                <element signature="n#!!block;n#addIsSelected#0" />
+                <element signature="n#!!block;n#extraMinus#0" />
+                <element signature="n#!!block;n#extraAdd#0" />
+                <element signature="n#!!block;n#extraChecker#0" />
+                <element signature="n#!!block;n#resetInputValues#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,8 +117,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="502">
+              <caret line="64" column="75" lean-forward="true" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="91" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="209" column="10" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="10" />
+              <folding>
+                <element signature="e#40#56#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,30 +147,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>renderBooking</find>
-      <find>booing</find>
-      <find>@media (min-width: 768px)</find>
-      <find>.sidebar .nav-item .nav-link span</find>
-      <find>CustomerBookingShow</find>
-      <find>delete</find>
-      <find>.frequency</find>
-      <find>col</find>
-      <find>modal-dialog</find>
-      <find>update</find>
-      <find>thead</find>
-      <find>ChangeToDraft</find>
-      <find>show</find>
-      <find>compose</find>
-      <find>BtnDraft__</find>
-      <find>deletingMessage_</find>
-      <find>Ready to Leave?</find>
-      <find>Kitchen</find>
-      <find>--</find>
-      <find>appointment</find>
+      <find>Additional information</find>
+      <find>STEP 6: SELECT PAYMENT</find>
+      <find>This information will be used to contact you about your service.</find>
+      <find>step</find>
+      <find>What type of service would you like?</find>
+      <find>CHOOSE YOUR SERVICE</find>
+      <find>Adds extra time</find>
+      <find>Choose both a date and a 2 hour window between which you would like us to come.</find>
+      <find>How often?</find>
+      <find>Enter your card information below</find>
+      <find>By clicking the Book Now button you are agreeing to our Terms of Service and Privacy Policy.</find>
+      <find>datepicker</find>
+      <find>form</find>
+      <find>&lt;form</find>
+      <find>usr_extra_clean_walls</find>
+      <find>exWalls</find>
+      <find>usr_extra_batch_laundry</find>
+      <find>usr_extra_clean_inside_oven</find>
+      <find>usr_extra_clean_fridge</find>
+      <find>usr_extra_1hr_ironing</find>
+      <find>usr_extra_pets</find>
+      <find>extra_map</find>
+      <find>usr_extra_vac_mop_bucket</find>
+      <find>usr_choosen_service_type</find>
       <find>1 Bedroom (Regular)</find>
-      <find>usr_additional_info_about_4season</find>
-      <find>usr_additional_info_about_4season</find>
-      <find>step 3</find>
+      <find>STEP 4: CHOOSE YOUR SERVICE</find>
+      <find>usr_number_of_bedroom</find>
+      <find>Choose service date.</find>
+      <find>When would you like us to come?</find>
+      <find>Follow The Step To Complete Your Booking Information</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,7 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Booking.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CalendarEvent.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_04_180931_create_booking_customer_view_table.php" />
@@ -239,12 +227,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/BookingsController.php" />
         <option value="$PROJECT_DIR$/public/images/svg/iconfinder_unknown_403017.svg" />
         <option value="$PROJECT_DIR$/public/images/svg/iron-svgrepo-com.svg" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/console.sql" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/_shared/_footer.blade.php" />
         <option value="$PROJECT_DIR$/public/css/booking.css" />
         <option value="$PROJECT_DIR$/resources/views/_shared/_header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/FeatureList.TODO" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/console.sql" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/public/js/booking.js" />
         <option value="$PROJECT_DIR$/resources/views/booking.blade.php" />
       </list>
@@ -354,6 +343,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,62 +354,36 @@
             <path>
               <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
               <item name="fourseasons" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
               <item name="fourseasons" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
               <item name="fourseasons" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
               <item name="fourseasons" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fourseasons" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
               <item name="fourseasons" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="_shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
-            <path>
-              <item name="fourseasons" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Database Consoles" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-              <item name="4f5af2c7-fc84-46c0-9b50-fbaa16d476bb" type="1e004dc1:ScratchProjectViewPane$MyRootNode$1$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,7 +398,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -518,11 +482,16 @@
       <workItem from="1577097839108" duration="601000" />
       <workItem from="1578104135047" duration="14508000" />
       <workItem from="1578148150711" duration="594000" />
+      <workItem from="1578148845928" duration="91000" />
+      <workItem from="1578219331773" duration="10000" />
+      <workItem from="1578308898242" duration="3369000" />
+      <workItem from="1578316102042" duration="633000" />
+      <workItem from="1578319422838" duration="10965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287649000" />
+    <option name="totallyTimeSpent" value="302717000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -537,7 +506,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49635038" visible="true" weight="0.13557047" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49635038" visible="true" weight="0.14563759" />
       <window_info id="Structure" order="1" sideWeight="0.50364965" side_tool="true" weight="0.1590604" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5021834" side_tool="true" weight="0.1590604" />
@@ -554,6 +523,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5060403" side_tool="true" weight="0.3455344" />
       <window_info anchor="bottom" x="0" y="0" width="1536" height="834" id="Terminal" order="11" sideWeight="0.49395972" type="SLIDING" weight="0.46998537" />
       <window_info anchor="bottom" x="33" y="314" width="1490" height="395" id="Database Console" order="12" type="SLIDING" weight="0.5783309" />
+      <window_info anchor="bottom" id="Tasks" order="13" type="SLIDING" weight="0.329429" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -587,26 +557,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/CleanersTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="16" selection-end-column="48" />
-          <folding>
-            <element signature="e#7#24#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/CleanersTableFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding>
-            <element signature="e#67#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/vendor/fontawesome-free/svgs/solid/envelope.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -793,16 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/_sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -854,13 +794,6 @@
     <entry file="file://$PROJECT_DIR$/public/images/svg/iron-svgrepo-com.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/_shared/_footer.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -872,13 +805,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1992">
-          <caret line="83" column="24" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -896,24 +822,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/booking.js">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+        <state relative-caret-position="234">
+          <caret line="501" column="26" lean-forward="true" selection-start-line="501" selection-start-column="26" selection-end-line="501" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/FeatureList.TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="209" column="10" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="10" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="17815" column="4" selection-start-line="17815" selection-start-column="4" selection-end-line="17815" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="502">
+          <caret line="64" column="75" lean-forward="true" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/booking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
+          <folding>
+            <element signature="n#!!block;n#addIsSelected#0" />
+            <element signature="n#!!block;n#extraMinus#0" />
+            <element signature="n#!!block;n#extraAdd#0" />
+            <element signature="n#!!block;n#extraChecker#0" />
+            <element signature="n#!!block;n#resetInputValues#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="185" column="58" selection-start-line="185" selection-start-column="54" selection-end-line="185" selection-end-column="58" />
+        <state relative-caret-position="574">
+          <caret line="310" column="74" selection-start-line="310" selection-start-column="74" selection-end-line="310" selection-end-column="74" />
+          <caret line="321" column="74" selection-start-line="321" selection-start-column="74" selection-end-line="321" selection-end-column="74" />
+          <caret line="332" column="74" selection-start-line="332" selection-start-column="74" selection-end-line="332" selection-end-column="74" />
+          <caret line="345" column="74" selection-start-line="345" selection-start-column="74" selection-end-line="345" selection-end-column="74" />
+          <caret line="357" column="74" selection-start-line="357" selection-start-column="74" selection-end-line="357" selection-end-column="74" />
+          <caret line="368" column="74" selection-start-line="368" selection-start-column="74" selection-end-line="368" selection-end-column="74" />
+          <caret line="379" column="74" selection-start-line="379" selection-start-column="74" selection-end-line="379" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#p#1;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#3;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#4;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#6;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#7;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#8;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#28614#28620#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
