@@ -69,7 +69,7 @@
         }
 
         .btn-outline-blue:hover,
-        .btn-outline-blue.active{
+        .btn-outline-blue.active {
             background-color: #243774;
             color: #fff;
         }
@@ -89,7 +89,7 @@
             color: rgba(255, 255, 255, 0.7);
         }
     </style>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 @include('_shared._header')
@@ -101,8 +101,8 @@
     </div>
     <!-- form that i think that encapsulate the two column so that the submit button worked -->
     <form action="{{ route('customer.booking') }}" method="post">
-        @csrf
-        <!-- Container for the two column -->
+    @csrf
+    <!-- Container for the two column -->
         <div class="row">
             <!-- First column container -->
             <div class="col-12 col-lg-8">
@@ -110,7 +110,8 @@
                 <!-- div container for Step 1 -->
                 <div class="mb-5">
                     <h5 class="text-capitalize">Follow the step to complete your booking information</h5>
-                    <h6 class="mb-4 text-muted">View your price below and just a few details and we can complete your booking
+                    <h6 class="mb-4 text-muted">View your price below and just a few details and we can complete your
+                        booking
                         information</h6>
 
                     <h5>STEP 1 : WHO YOU ARE</h5>
@@ -118,28 +119,36 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="user_fullName">Enter fullname<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
+                                <label for="user_fullName">Enter fullname<span class="text-danger" data-toggle="tooltip"
+                                                                               data-placement="top"
+                                                                               title="This field require for your booking information">*</span></label>
                                 <input type="text" class="form-control" id="user_fullName" name="fullname">
                             </div>
                         </div><!-- end of fullname -->
 
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label for="user_email">Enter email<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
+                                <label for="user_email">Enter email<span class="text-danger" data-toggle="tooltip"
+                                                                         data-placement="top"
+                                                                         title="This field require for your booking information">*</span></label>
                                 <input type="email" class="form-control" id="user_email" name="email">
                             </div>
                         </div><!-- end of email -->
 
                         <div class="col-12 col-md-6">
                             <div class="form-group">
-                                <label for="user_phone">Enter phone number<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
+                                <label for="user_phone">Enter phone number<span class="text-danger"
+                                                                                data-toggle="tooltip"
+                                                                                data-placement="top"
+                                                                                title="This field require for your booking information">*</span></label>
                                 <input type="text" class="form-control" id="user_phone" name="phone">
                             </div>
                         </div><!-- end of phone numbers -->
 
                         <div class="col-12 offset-md-6 col-md-6">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="usr_check_reminders" name="reminders">
+                                <input type="checkbox" class="form-check-input" id="usr_check_reminders"
+                                       name="reminders">
                                 <label class="form-check-label" for="usr_check_reminders">Send me reminders about my
                                     booking via text message</label>
                             </div>
@@ -154,28 +163,39 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="user_address">Enter the current address<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
+                                <label for="user_address">Enter the current address<span class="text-danger"
+                                                                                         data-toggle="tooltip"
+                                                                                         data-placement="top"
+                                                                                         title="This field require for your booking information">*</span></label>
                                 <textarea rows="4" class="form-control" id="user_address" name="address"></textarea>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="user_accurate_house_address">Enter house/apartment no.<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
-                                <textarea rows="4" class="form-control" id="user_accurate_house_address" name="home_apartment_number"></textarea>
+                                <label for="user_accurate_house_address">Enter house/apartment no.<span
+                                        class="text-danger" data-toggle="tooltip" data-placement="top"
+                                        title="This field require for your booking information">*</span></label>
+                                <textarea rows="4" class="form-control" id="user_accurate_house_address"
+                                          name="home_apartment_number"></textarea>
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="user_city">Enter city name<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
+                                <label for="user_city">Enter city name<span class="text-danger" data-toggle="tooltip"
+                                                                            data-placement="top"
+                                                                            title="This field require for your booking information">*</span></label>
                                 <input type="text" class="form-control" id="user_city">
                             </div>
                         </div>
 
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="user_postcode">Enter Postal code<span class="text-danger" data-toggle="tooltip" data-placement="top" title="This field require for your booking information">*</span></label>
+                                <label for="user_postcode">Enter Postal code<span class="text-danger"
+                                                                                  data-toggle="tooltip"
+                                                                                  data-placement="top"
+                                                                                  title="This field require for your booking information">*</span></label>
                                 <input type="email" class="form-control" id="user_postcode" name="postcode">
                             </div>
                         </div>
@@ -211,7 +231,8 @@
                 <!-- div container for Step 4 -->
                 <div class="mt-5">
                     <h5>STEP 4: CHOOSE YOUR SERVICE</h5>
-                    <p class="text-muted">Tell us about your home. Please round up any half bedrooms or bathrooms. Included are your living
+                    <p class="text-muted">Tell us about your home. Please round up any half bedrooms or bathrooms.
+                        Included are your living
                         room, kitchen, hallways and other areas of the home.</p>
                     <div class="row">
                         <div class="col-12 col-md-6">
@@ -261,8 +282,8 @@
                                                    placeholder="Count" value="0" min="1" max="30" name="cabinet">
 
                                             <div class="input-group-append">
-                                                <a id="extra_cabinet_btn_plus" class="btn" type="button">+</a>
-                                                <a id="extra_cabinet_btn_minus" class="btn" type="button">-</a>
+                                                <a id="extra_cabinet_btn_plus" class="btn font-weight-bold"  type="button">+</a>
+                                                <a id="extra_cabinet_btn_minus" class="btn font-weight-bold" type="button">-</a>
                                             </div>
 
                                         </div>
@@ -289,8 +310,8 @@
                                                    placeholder="Count" value="0" min="1" max="30" name="inside_windows">
 
                                             <div class="input-group-append">
-                                                <a id="extra_windows_btn_plus" class="btn" type="button">+</a>
-                                                <a id="extra_windows_btn_minus" class="btn" type="button">-</a>
+                                                <a id="extra_windows_btn_plus" class="btn font-weight-bold" type="button">+</a>
+                                                <a id="extra_windows_btn_minus" class="btn font-weight-bold" type="button">-</a>
                                             </div>
 
                                         </div>
@@ -304,11 +325,14 @@
                         <div id="usr_extra_clean_walls" class="col-6 col-md-3 selection">
                             <div class="extra-header-container">
                                 <div class="border rounded extra-image-container">
-                                    <img class="extra-img m-auto" src="{{ asset('images/assets/wall.png') }}" alt="extra-image-cabinet">
+                                    <img class="extra-img m-auto" src="{{ asset('images/assets/wall.png') }}"
+                                         alt="extra-image-cabinet">
                                 </div>
                             </div>
                             <p class="px-1">Clean walls</p>
-                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="clean_walls" id="extra_clean_walls"> Clean walls</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="clean_walls"
+                                                                                   id="extra_clean_walls"> Clean walls
+                            </p>
                         </div><!-- end of walls -->
 
                         <div id="usr_extra_batch_laundry" class="col-6 col-md-3 selection">
@@ -319,7 +343,8 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">One batch of laundry</p>
-                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_laundry" id="extra_laundry"> Clean walls</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_laundry"
+                                                                                   id="extra_laundry"> Clean walls</p>
                         </div><!-- end of laundry -->
 
                         <div id="usr_extra_clean_inside_oven" class="col-6 col-md-3 selection">
@@ -330,7 +355,10 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Clean inside the oven</p>
-                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_clean_oven" id="extra_clean_oven"> Clean oven</p>
+                            <p style="visibility: hidden;width:0;height:0;">
+                                <input type="checkbox"
+                                       name="extra_clean_oven"
+                                       id="extra_clean_oven"> Clean oven</p>
 
                         </div>
 
@@ -343,7 +371,10 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Clean inside the Fridge</p>
-                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_inside_fridge" id="extra_inside_fridge"> Clean inside the Fridge</p>
+                            <p style="visibility: hidden;width:0;height:0;">
+                                <input type="checkbox"
+                                       name="extra_inside_fridge"
+                                       id="extra_inside_fridge"> Clean inside the Fridge</p>
 
                         </div>
 
@@ -355,7 +386,9 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">One full hour of ironing</p>
-                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_ironing" id="extra_ironing"> hour of ironing</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_ironing"
+                                                                                   id="extra_ironing"> hour of ironing
+                            </p>
                         </div>
 
                         <div id="usr_extra_pets" class="col-6 col-md-3 selection">
@@ -366,7 +399,8 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Home with Pets</p>
-                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_animal" id="extra_animal"> Home with Pets</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_animal"
+                                                                                   id="extra_animal"> Home with Pets</p>
                         </div>
 
                         <div id="usr_extra_vac_mop_bucket" class="col-6 col-md-3 selection">
@@ -377,7 +411,9 @@
                                 </div>
                             </div>
                             <p class="px-1 pt-1">Provide Vacuum, Mop and Bucket</p>
-                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_map" id="extra_map"> Provide Vacuum, Mop and Bucket</p>
+                            <p style="visibility: hidden;width:0;height:0;"><input type="checkbox" name="extra_map"
+                                                                                   id="extra_map"> Provide Vacuum, Mop
+                                and Bucket</p>
                         </div>
 
                         <div id="usr_extra_bed_change" class="col-6 col-md-3 selection-input">
@@ -391,7 +427,8 @@
                                         <div class="input-group my-auto">
 
                                             <input id="extra_bed_count" type="number" class="form-control"
-                                                   placeholder="Count" value="0" min="1" max="30" name="extra_bed_changing">
+                                                   placeholder="Count" value="0" min="1" max="30"
+                                                   name="extra_bed_changing">
 
                                             <div class="input-group-append">
                                                 <a id="extra_bed_btn_plus" class="btn" type="button">+</a>
@@ -436,13 +473,14 @@
                 <!-- div that contain date picker and time for cleaning -->
                 <div>
                     <h5>When would you like us to come?</h5>
-                     <p class="text-muted">Choose both a date and a 2 hour window between which you would like us to come.</p>
+                    <p class="text-muted">Choose both a date and a 2 hour window between which you would like us to
+                        come.</p>
                     <div class="row">
                         <div class="col-12 col-md-6 mt-2">
                             <input id="datepicker" type="text" placeholder="Choose Date*" class="form-control">
                         </div>
                         <div class="col-12 col-md-6 mt-2">
-                            <select class="form-control" id="usr_hour_selection">
+                            <select class="form-control" id="usr_hour_selection" disabled>
                                 <option value="" disabled="">Select time arrival</option>
                                 <option value="8:00AM - 9:AM">8:00AM - 9:AM</option>
                                 <option value="9:00AM - 10:AM">9:00AM - 10:AM</option>
@@ -460,7 +498,8 @@
 
                 <div class="mt-5">
                     <h5>How often?</h5>
-                    <p class="text-muted">It's all about matching you with the perfect clean for your home. Scheduling is flexible. Cancel
+                    <p class="text-muted">It's all about matching you with the perfect clean for your home. Scheduling
+                        is flexible. Cancel
                         or reschedule anytime.</p>
                     <div class="row no-gutters text-center radio-group">
                         <div class="col-12 col-md-3 pr-0">
@@ -485,17 +524,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- step 6 payment section div -->
-                <div class="mt-5">
-                    <h5>STEP 6: SELECT PAYMENT</h5>
-                    <p class="text-muted">Enter your card information below.</p>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="usr_credit_number" placeholder="Credit Number">
-                        <img class="py-3" src="{{ asset('images/assets/image.png') }}" alt="credit-image">
-                    </div>
-                </div>
-            </div>
-            <!-- Second Column container -->
+
+            </div>  <!-- Second Column container -->
+
             <div class="col-12 col-lg-4 ">
                 <div class="sticky">
                     <div class="border rounded booking-css">
@@ -506,17 +537,19 @@
 
                             <p class="d-flex align-items-center">
                                 <i class="fas fa-2x fa-house-damage"></i>
-                                <span class="ml-2" id="bedroom_request">1</span>&nbsp;<span style="" id="booking_summary_bedroom"> Bedroom (Regular)</span>
+                                <span class="ml-2" id="bedroom_request">1</span>&nbsp;
+                                <span style="" id="booking_summary_bedroom"> Bedroom (Regular)</span>
                             </p>
 
                             <p class="d-flex align-items-center">
                                 <i class="far fa-2x fa-calendar"></i>
                                 <span class="ml-3" id="booking_summary_date">Choose service date...</span>
+                                <span class="ml-3" id="booking_summary_time"></span>
                             </p>
 
                             <p class="d-flex align-items-center">
                                 <i class="far fa-2x fa-clock"></i>
-                                <span class="ml-3" id="booking_summary_totalTime">3 Hours 0 Minutes</span>
+                                <span class="ml-3" id="booking_summary_totalTime">2 Hours 0 Minutes</span>
                             </p>
 
                             <p class="d-flex align-items-center">
@@ -528,7 +561,7 @@
 
                         <div class="px-4 d-flex justify-content-between small">
                             <p class="font-weight-bold mb-1">Subtotal</p>
-                            <p id="booking_summary_subTotal" class="font-weight-bold mb-1">£46.00</p>
+                            <p id="booking_summary_subTotal" class="font-weight-bold mb-1">£42.00</p>
                         </div>
 
                         <div class="px-4 d-flex justify-content-between small">
@@ -543,10 +576,11 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 col-lg-8">
-                <p class="text-muted">By clicking the Book Now button you are agreeing to our Terms of Service and Privacy Policy.</p>
-                <button type="submit" class="btn btn-prim py-3 w-100">BOOK NOW</button>
+            <div class="col-12 col-lg-8 mt-3">
+                <p class="text-muted">By clicking the PROCEED TO PAYMENT button you are agreeing to our Terms of Service
+                    and
+                    Privacy Policy.</p>
+                <button type="submit" class="btn btn-prim py-3 w-100">PROCEED TO PAYMENT</button>
             </div>
         </div>
     </form>
@@ -561,11 +595,17 @@
 </script>
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <script>
-    let today, datepicker;
-    today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-
-    $('#datepicker').datepicker({
-        uiLibrary: 'bootstrap4',
-        minDate: today
-    });
+    $(document).ready(function () {
+        let today  = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+            minDate: today
+        }).on('change', function () {
+            $("#usr_hour_selection").attr("disabled", false);
+            $("#booking_summary_time").text("8:00 AM - 9:00 AM")
+        });
+        $(document).on('change', '#usr_hour_selection', function () {
+            $("#booking_summary_time").text(this.value)
+        })
+    })
 </script>

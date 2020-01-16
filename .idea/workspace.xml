@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73390a96-7aec-415b-802c-ee7d4345d7e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/FeatureList.TODO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/storage_v2/_src_/schema/fourseasons.Cu7WuQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/storage_v2/_src_/schema/fourseasons.Cu7WuQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fourseasons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fourseasons.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/John_paul.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/John_paul.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/booking.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/booking.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,71 +59,39 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="501" column="26" lean-forward="true" selection-start-line="501" selection-start-column="26" selection-end-line="501" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="310" column="74" selection-start-line="310" selection-start-column="74" selection-end-line="310" selection-end-column="74" />
-              <caret line="321" column="74" selection-start-line="321" selection-start-column="74" selection-end-line="321" selection-end-column="74" />
-              <caret line="332" column="74" selection-start-line="332" selection-start-column="74" selection-end-line="332" selection-end-column="74" />
-              <caret line="345" column="74" selection-start-line="345" selection-start-column="74" selection-end-line="345" selection-end-column="74" />
-              <caret line="357" column="74" selection-start-line="357" selection-start-column="74" selection-end-line="357" selection-end-column="74" />
-              <caret line="368" column="74" selection-start-line="368" selection-start-column="74" selection-end-line="368" selection-end-column="74" />
-              <caret line="379" column="74" selection-start-line="379" selection-start-column="74" selection-end-line="379" selection-end-column="74" />
+            <state relative-caret-position="-1107">
+              <caret line="479" column="49" selection-start-line="479" selection-start-column="39" selection-end-line="479" selection-end-column="49" />
               <folding>
-                <element signature="n#style#0;n#p#1;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#3;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#4;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#6;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#7;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#8;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#28614#28620#1#HTML" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#4;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#6;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#7;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#8;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#9;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#5;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#select#0;n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#7;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/booking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
+            <state relative-caret-position="276">
+              <caret line="202" column="7" lean-forward="true" selection-start-line="202" selection-start-column="7" selection-end-line="202" selection-end-column="7" />
               <folding>
                 <element signature="n#!!block;n#addIsSelected#0" />
                 <element signature="n#!!block;n#extraMinus#0" />
                 <element signature="n#!!block;n#extraAdd#0" />
                 <element signature="n#!!block;n#extraChecker#0" />
                 <element signature="n#!!block;n#resetInputValues#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="64" column="75" lean-forward="true" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="209" column="10" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="10" />
-              <folding>
-                <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,10 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Additional information</find>
-      <find>STEP 6: SELECT PAYMENT</find>
-      <find>This information will be used to contact you about your service.</find>
-      <find>step</find>
       <find>What type of service would you like?</find>
       <find>CHOOSE YOUR SERVICE</find>
       <find>Adds extra time</find>
@@ -158,7 +116,6 @@
       <find>How often?</find>
       <find>Enter your card information below</find>
       <find>By clicking the Book Now button you are agreeing to our Terms of Service and Privacy Policy.</find>
-      <find>datepicker</find>
       <find>form</find>
       <find>&lt;form</find>
       <find>usr_extra_clean_walls</find>
@@ -177,6 +134,11 @@
       <find>Choose service date.</find>
       <find>When would you like us to come?</find>
       <find>Follow The Step To Complete Your Booking Information</find>
+      <find>book now</find>
+      <find>3 hour</find>
+      <find>46.00</find>
+      <find>radioSelected</find>
+      <find>datepicker</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -234,8 +196,8 @@
         <option value="$PROJECT_DIR$/resources/FeatureList.TODO" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/console.sql" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/public/js/booking.js" />
         <option value="$PROJECT_DIR$/resources/views/booking.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/booking.js" />
       </list>
     </option>
   </component>
@@ -343,7 +305,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -384,6 +345,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -487,11 +449,18 @@
       <workItem from="1578308898242" duration="3369000" />
       <workItem from="1578316102042" duration="633000" />
       <workItem from="1578319422838" duration="10965000" />
+      <workItem from="1578366213166" duration="361000" />
+      <workItem from="1578380044490" duration="544000" />
+      <workItem from="1578508701228" duration="821000" />
+      <workItem from="1578547346891" duration="25000" />
+      <workItem from="1579117889399" duration="862000" />
+      <workItem from="1579158848182" duration="5769000" />
+      <workItem from="1579186670328" duration="691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302717000" />
+    <option name="totallyTimeSpent" value="311790000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -506,7 +475,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49635038" visible="true" weight="0.14563759" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49635038" weight="0.15771812" />
       <window_info id="Structure" order="1" sideWeight="0.50364965" side_tool="true" weight="0.1590604" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5021834" side_tool="true" weight="0.1590604" />
@@ -530,7 +499,7 @@
       <window_info anchor="right" id="Database" order="3" type="SLIDING" weight="0.22416107" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49635038" visible="true" weight="0.18255034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49635038" visible="true" weight="0.15771812" />
       <window_info id="Structure" order="1" sideWeight="0.50364965" side_tool="true" weight="0.1590604" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5021834" side_tool="true" weight="0.1590604" />
@@ -544,9 +513,10 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.329429" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.329429" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5053691" side_tool="true" weight="0.3455344" />
-      <window_info anchor="bottom" x="0" y="0" width="1536" height="834" id="Terminal" order="11" sideWeight="0.49463087" weight="0.46998537" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5060403" side_tool="true" weight="0.3455344" />
+      <window_info anchor="bottom" x="0" y="0" width="1536" height="834" id="Terminal" order="11" sideWeight="0.49395972" type="SLIDING" weight="0.46998537" />
       <window_info anchor="bottom" x="33" y="314" width="1490" height="395" id="Database Console" order="12" type="SLIDING" weight="0.5783309" />
+      <window_info anchor="bottom" id="Tasks" order="13" type="SLIDING" weight="0.329429" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -825,27 +795,10 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="501" column="26" lean-forward="true" selection-start-line="501" selection-start-column="26" selection-end-line="501" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/FeatureList.TODO">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="209" column="10" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="10" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -858,44 +811,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="64" column="75" lean-forward="true" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="91" />
+        <state relative-caret-position="1320">
+          <caret line="64" column="75" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BookingsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4896">
+          <caret line="209" column="10" selection-start-line="209" selection-start-column="8" selection-end-line="209" selection-end-column="10" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="501" column="26" selection-start-line="501" selection-start-column="26" selection-end-line="501" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1107">
+          <caret line="479" column="49" selection-start-line="479" selection-start-column="39" selection-end-line="479" selection-end-column="49" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#6;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#7;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#8;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#9;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#5;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#select#0;n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#7;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/booking.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="258" lean-forward="true" selection-start-line="258" selection-end-line="258" />
+        <state relative-caret-position="276">
+          <caret line="202" column="7" lean-forward="true" selection-start-line="202" selection-start-column="7" selection-end-line="202" selection-end-column="7" />
           <folding>
             <element signature="n#!!block;n#addIsSelected#0" />
             <element signature="n#!!block;n#extraMinus#0" />
             <element signature="n#!!block;n#extraAdd#0" />
             <element signature="n#!!block;n#extraChecker#0" />
             <element signature="n#!!block;n#resetInputValues#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="310" column="74" selection-start-line="310" selection-start-column="74" selection-end-line="310" selection-end-column="74" />
-          <caret line="321" column="74" selection-start-line="321" selection-start-column="74" selection-end-line="321" selection-end-column="74" />
-          <caret line="332" column="74" selection-start-line="332" selection-start-column="74" selection-end-line="332" selection-end-column="74" />
-          <caret line="345" column="74" selection-start-line="345" selection-start-column="74" selection-end-line="345" selection-end-column="74" />
-          <caret line="357" column="74" selection-start-line="357" selection-start-column="74" selection-end-line="357" selection-end-column="74" />
-          <caret line="368" column="74" selection-start-line="368" selection-start-column="74" selection-end-line="368" selection-end-column="74" />
-          <caret line="379" column="74" selection-start-line="379" selection-start-column="74" selection-end-line="379" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#p#1;n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#3;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#4;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#6;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#7;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#8;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#28614#28620#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

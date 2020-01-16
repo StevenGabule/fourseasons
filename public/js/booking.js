@@ -198,7 +198,7 @@ $(document).ready(function () {
         }
     });
 
-    $("#datepicker").on('mouseleave, mouseenter', function() {
+    $("#datepicker").on('mouseleave, mouseenter, change', function() {
         $("#booking_summary_date").text($(this).val() !== '' ? $(this).val() : 'Choose service date...')
     });
 
@@ -319,11 +319,10 @@ $(document).ready(function () {
 
     //How often section radio like behavior
     $('.radio-group .radio').on('click', function () {
-
         $('div.radio-group').find('div.radio').removeClass('radioSelected');
         $(this).addClass('radioSelected');
-        var val = $(this).attr('data-value');
-        // console.log(val);
+        let val = $(this).attr('data-value');
+        $("#booking_summary_often").text(val);
     });
 
     //icon filter check if selected
