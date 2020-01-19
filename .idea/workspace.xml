@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73390a96-7aec-415b-802c-ee7d4345d7e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/booking.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,9 +58,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="635" column="30" selection-start-line="635" selection-start-column="30" selection-end-line="635" selection-end-column="30" />
+            <state relative-caret-position="349">
+              <caret line="636" column="38" selection-start-line="636" selection-start-column="38" selection-end-line="636" selection-end-column="38" />
               <folding>
+                <element signature="n#style#0;n#p#1;n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
@@ -96,10 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Adds extra time</find>
-      <find>Choose both a date and a 2 hour window between which you would like us to come.</find>
-      <find>How often?</find>
-      <find>Enter your card information below</find>
       <find>By clicking the Book Now button you are agreeing to our Terms of Service and Privacy Policy.</find>
       <find>form</find>
       <find>&lt;form</find>
@@ -126,6 +122,10 @@
       <find>datepicker</find>
       <find>Clean inside cabinets</find>
       <find>2 Hours 0 Minutes</find>
+      <find>Clean inside windows</find>
+      <find>data-</find>
+      <find>data-ca</find>
+      <find>data-cabinet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -292,6 +292,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,7 +333,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -451,12 +451,12 @@
       <workItem from="1579293363189" duration="3000" />
       <workItem from="1579413957847" duration="565000" />
       <workItem from="1579414554563" duration="214000" />
-      <workItem from="1579414795816" duration="3673000" />
+      <workItem from="1579414795816" duration="13188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323378000" />
+    <option name="totallyTimeSpent" value="332893000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,7 +471,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49635038" weight="0.15771812" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49635038" type="SLIDING" weight="0.15771812" />
       <window_info id="Structure" order="1" sideWeight="0.50364965" side_tool="true" weight="0.1590604" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" sideWeight="0.5021834" side_tool="true" weight="0.1590604" />
@@ -524,9 +524,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/vendor/fontawesome-free/svgs/solid/envelope.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1920" />
@@ -830,16 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="635" column="30" selection-start-line="635" selection-start-column="30" selection-end-line="635" selection-end-column="30" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/booking.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3480">
@@ -850,6 +837,24 @@
             <element signature="n#!!block;n#extraAdd#0" />
             <element signature="n#!!block;n#extraChecker#0" />
             <element signature="n#!!block;n#resetInputValues#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="748" column="29" lean-forward="true" selection-start-line="748" selection-start-column="29" selection-end-line="748" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="636" column="38" selection-start-line="636" selection-start-column="38" selection-end-line="636" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#p#1;n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

@@ -283,10 +283,10 @@
 
                                             <div class="input-group-append">
 
-                                                <a id="extra_cabinet_btn_plus" class="btn font-weight-bold"
+                                                <a id="extra_cabinet_btn_plus" data-cabinet="1" class="btn font-weight-bold"
                                                    type="button">+</a>
 
-                                                <a id="extra_cabinet_btn_minus" class="btn font-weight-bold"
+                                                <a id="extra_cabinet_btn_minus" data-cabinet="2" class="btn font-weight-bold"
                                                    type="button">-</a>
                                             </div>
 
@@ -314,9 +314,11 @@
                                                    placeholder="Count" value="0" min="1" max="30" name="inside_windows">
 
                                             <div class="input-group-append">
-                                                <a id="extra_windows_btn_plus" class="btn font-weight-bold"
+                                                <a id="extra_windows_btn_plus"
+                                                   class="btn font-weight-bold"
                                                    type="button">+</a>
-                                                <a id="extra_windows_btn_minus" class="btn font-weight-bold"
+                                                <a id="extra_windows_btn_minus"
+                                                   class="btn font-weight-bold"
                                                    type="button">-</a>
                                             </div>
 
@@ -531,66 +533,68 @@
                         </div>
                     </div>
                 </div>
-                </div>  <!-- Second Column container -->
+            </div>  <!-- Second Column container -->
 
-                <div class="col-12 col-lg-4 ">
-                    <div class="sticky">
-                        <div class="border rounded booking-css">
+            <div class="col-12 col-lg-4 ">
+                <div class="sticky">
+                    <div class="border rounded booking-css">
 
-                            <h5 class="mt-3 text-center font-weight-bolder py-2">BOOKING SUMMARY</h5>
+                        <h5 class="mt-3 text-center font-weight-bolder py-2">BOOKING SUMMARY</h5>
 
-                            <div class="py-4 px-4 d-flex flex-column border-bottom mb-3 border-top small">
+                        <div class="py-4 px-4 d-flex flex-column border-bottom mb-3 border-top small">
 
-                                <p class="d-flex align-items-center">
-                                    <i class="fas fa-2x fa-house-damage"></i>
-                                    <span class="ml-2" id="bedroom_request">1</span>&nbsp;
-                                    <span style="" id="booking_summary_bedroom"> Bedroom (Regular)</span>
-                                </p>
+                            <p class="d-flex align-items-center">
+                                <i class="fas fa-2x fa-house-damage"></i>
+                                <span class="ml-2" id="bedroom_request">1</span>&nbsp;
+                                <span style="" id="booking_summary_bedroom"> Bedroom (Regular)</span>
+                            </p>
 
-                                <p class="d-flex align-items-center">
-                                    <i class="far fa-2x fa-calendar"></i>
-                                    <span class="ml-3" id="booking_summary_date">Choose service date...</span>
-                                    <span class="ml-3" id="booking_summary_time"></span>
-                                </p>
+                            <p class="d-flex align-items-center">
+                                <i class="far fa-2x fa-calendar"></i>
+                                <span class="ml-3" id="booking_summary_date">Choose service date...</span>
+                                <span class="ml-3" id="booking_summary_time"></span>
+                            </p>
 
-                                <p class="d-flex align-items-center">
-                                    <i class="far fa-2x fa-clock"></i>
-                                    <span class="ml-3" id="booking_summary_totalTime"><span id="booking_summary_hours">2</span> Hours  <span id="booking_summary_minutes">0</span> Minutes</span>
+                            <p class="d-flex align-items-center">
+                                <i class="far fa-2x fa-clock"></i>
+                                <span class="ml-3" id="booking_summary_totalTime"><span
+                                        id="booking_summary_hours">2</span> Hours  <span
+                                        id="booking_summary_minutes">0</span> Minutes</span>
 
-                                </p>
+                            </p>
 
-                                <p class="d-flex align-items-center">
-                                    <i class="fas fa-2x fa-redo"></i>
-                                    <span class="ml-3" id="booking_summary_often">Biweekly</span>
-                                </p>
+                            <p class="d-flex align-items-center">
+                                <i class="fas fa-2x fa-redo"></i>
+                                <span class="ml-3" id="booking_summary_often">Biweekly</span>
+                            </p>
 
-                            </div>
+                        </div>
 
-                            <div class="px-4 d-flex justify-content-between small">
-                                <p class="font-weight-bold mb-1">Subtotal</p>
-                                <p id="booking_summary_subTotal" class="font-weight-bold mb-1">£42.00</p>
-                            </div>
+                        <div class="px-4 d-flex justify-content-between small">
+                            <p class="font-weight-bold mb-1">Subtotal</p>
+                            <p id="booking_summary_subTotal" class="font-weight-bold mb-1">£42.00</p>
+                        </div>
 
-                            <div class="px-4 d-flex justify-content-between small">
-                                <p class="font-weight-bold mb-1">Discount</p>
-                                <p id="booking_summary_subTotal" class="font-weight-bold pb-0">£4.20</p>
-                            </div>
+                        <div class="px-4 d-flex justify-content-between small">
+                            <p class="font-weight-bold mb-1">Discount</p>
+                            <p id="booking_summary_subTotal" class="font-weight-bold pb-0">£4.20</p>
+                        </div>
 
-                            <div class="px-4 pb-2 d-flex justify-content-between small">
-                                <h4>Total</h4>
-                                <h4 id="booking_summary_subTotal">£46.00</h4>
-                            </div>
+                        <div class="px-4 pb-2 d-flex justify-content-between small">
+                            <h4>Total</h4>
+                            <h4 id="booking_summary_subTotal">£46.00</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-8 mt-3">
-                    <p class="text-muted">By clicking the PROCEED TO PAYMENT button you are agreeing to our Terms of
-                        Service
-                        and
-                        Privacy Policy.</p>
-                    <button type="submit" class="btn btn-prim py-3 w-100">PROCEED TO PAYMENT</button>
-                </div>
             </div>
+            <div class="col-12 col-lg-8 mt-3">
+                <p class="text-muted">By clicking the PROCEED TO PAYMENT button you are agreeing to our Terms of
+                    Service
+                    and
+                    Privacy Policy.</p>
+                <button type="submit" class="btn btn-prim py-3 w-100">PROCEED TO PAYMENT</button>
+            </div>
+        </div>
     </form>
 </main>
 @include('_shared._footer')
@@ -618,37 +622,45 @@
             $("#booking_summary_time").text(this.value)
         });
 
-        var inc_ = 15;
-        $(document).on('click', '#extra_cabinet_btn_plus', function(e) {
-            var extra_cabinet = $("#booking_summary_minutes");
-            var extra_time = $("#booking_summary_hours");
-            var extra_minutes = parseInt(extra_cabinet.text());
-            var extra_times = parseInt(extra_time.text());
-            if (0 === extra_minutes) {
-                extra_cabinet.text(inc_);
+        let extra = 15;
+        function extras(extraHours, extraHour, extraMinutes, extraMinute, update) {
+            if (extraMinute === 0) {
+                if (update === 1) {
+                    extra = 15;
+                    extraMinutes.text(extra);
+                } else {
+                    extraMinutes.text(0);
+                    if (extraHour !== 2) {
+                        extraHour--;
+                        extraHours.text(extraHour);
+                        extra = 45;
+                        extraMinutes.text(extra);
+                    }
+                }
             } else {
-                inc_ +=15;
-                extra_cabinet.text(inc_);
-                if (inc_ === 60) {
-                    extra_times++;
-                    extra_time.text(extra_times);
-                    extra_cabinet.text(0);
-                    inc_ = 15;
+                if (update === 1) {
+                    extra += 15;
+                    extraMinutes.text(extra);
+                    if (extra === 60) {
+                        extraHour++;
+                        extraHours.text(extraHour);
+                        extraMinutes.text(0);
+                        extra = 15;
+                    }
+                } else {
+                    extra -= 15;
+                    extraMinutes.text(extra);
                 }
             }
+        }
+
+        $(document).on('click', '#extra_cabinet_btn_plus, #extra_cabinet_btn_minus', function (e) {
+            let extra_hours = $("#booking_summary_hours");
+            let extra_hour = parseInt(extra_hours.text());
+            let extra_minutes = $("#booking_summary_minutes");
+            let extra_minute = parseInt(extra_minutes.text());
+            extras(extra_hours, extra_hour, extra_minutes, extra_minute, parseInt(e.target.dataset.cabinet));
         });
 
-        $(document).on('click', '#extra_cabinet_btn_minus', function(e) {
-            var extra_cabinet = $("#booking_summary_minutes");
-            var extra_minutes = parseInt(extra_cabinet.text());
-            if (0 === extra_minutes) {
-                extra_cabinet.text(0);
-                inc_ = 15;
-            } else {
-                inc_ -=15;
-                extra_cabinet.text(inc_);
-                console.log(inc_);
-            }
-        });
     })
 </script>
