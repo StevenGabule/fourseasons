@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73390a96-7aec-415b-802c-ee7d4345d7e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/John_paul.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/John_paul.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/booking.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/booking.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/booking.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,34 +56,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1107">
-              <caret line="479" column="49" selection-start-line="479" selection-start-column="39" selection-end-line="479" selection-end-column="49" />
+            <state relative-caret-position="488">
+              <caret line="635" column="30" selection-start-line="635" selection-start-column="30" selection-end-line="635" selection-end-column="30" />
               <folding>
-                <element signature="n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#4;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#6;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#7;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#8;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#9;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#5;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#select#0;n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#7;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/booking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="202" column="7" lean-forward="true" selection-start-line="202" selection-start-column="7" selection-end-line="202" selection-end-column="7" />
+            <state relative-caret-position="3480">
+              <caret line="200" column="55" selection-start-line="199" selection-end-line="200" selection-end-column="55" />
               <folding>
                 <element signature="n#!!block;n#addIsSelected#0" />
                 <element signature="n#!!block;n#extraMinus#0" />
@@ -109,8 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>What type of service would you like?</find>
-      <find>CHOOSE YOUR SERVICE</find>
       <find>Adds extra time</find>
       <find>Choose both a date and a 2 hour window between which you would like us to come.</find>
       <find>How often?</find>
@@ -139,6 +124,8 @@
       <find>46.00</find>
       <find>radioSelected</find>
       <find>datepicker</find>
+      <find>Clean inside cabinets</find>
+      <find>2 Hours 0 Minutes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,8 +183,8 @@
         <option value="$PROJECT_DIR$/resources/FeatureList.TODO" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4f5af2c7-fc84-46c0-9b50-fbaa16d476bb/console.sql" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/booking.blade.php" />
         <option value="$PROJECT_DIR$/public/js/booking.js" />
+        <option value="$PROJECT_DIR$/resources/views/booking.blade.php" />
       </list>
     </option>
   </component>
@@ -455,12 +442,21 @@
       <workItem from="1578547346891" duration="25000" />
       <workItem from="1579117889399" duration="862000" />
       <workItem from="1579158848182" duration="5769000" />
-      <workItem from="1579186670328" duration="691000" />
+      <workItem from="1579186670328" duration="1923000" />
+      <workItem from="1579191115756" duration="397000" />
+      <workItem from="1579191541054" duration="537000" />
+      <workItem from="1579192773143" duration="236000" />
+      <workItem from="1579193058221" duration="2741000" />
+      <workItem from="1579242652602" duration="1990000" />
+      <workItem from="1579293363189" duration="3000" />
+      <workItem from="1579413957847" duration="565000" />
+      <workItem from="1579414554563" duration="214000" />
+      <workItem from="1579414795816" duration="3673000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311790000" />
+    <option name="totallyTimeSpent" value="323378000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,6 +489,7 @@
       <window_info anchor="bottom" x="0" y="0" width="1536" height="834" id="Terminal" order="11" sideWeight="0.49395972" type="SLIDING" weight="0.46998537" />
       <window_info anchor="bottom" x="33" y="314" width="1490" height="395" id="Database Console" order="12" type="SLIDING" weight="0.5783309" />
       <window_info anchor="bottom" id="Tasks" order="13" type="SLIDING" weight="0.329429" />
+      <window_info anchor="bottom" id="GraphQL" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -835,29 +832,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/booking.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1107">
-          <caret line="479" column="49" selection-start-line="479" selection-start-column="39" selection-end-line="479" selection-end-column="49" />
+        <state relative-caret-position="488">
+          <caret line="635" column="30" selection-start-line="635" selection-start-column="30" selection-end-line="635" selection-end-column="30" />
           <folding>
-            <element signature="n#div#1;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#5;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#6;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#7;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#8;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#9;n#div#0;n#div#4;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#5;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#select#0;n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#7;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#6;n#div#0;n#div#0;n#form#0;n#main#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/booking.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="202" column="7" lean-forward="true" selection-start-line="202" selection-start-column="7" selection-end-line="202" selection-end-column="7" />
+        <state relative-caret-position="3480">
+          <caret line="200" column="55" selection-start-line="199" selection-end-line="200" selection-end-column="55" />
           <folding>
             <element signature="n#!!block;n#addIsSelected#0" />
             <element signature="n#!!block;n#extraMinus#0" />
